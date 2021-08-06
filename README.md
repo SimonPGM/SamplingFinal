@@ -11,4 +11,4 @@
 <h2 style="text-align:center"> Gaussian kernel integrated cuz its beatifiul </h2>
 <hr width=50%>
 
-$$\huge \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}$$
+<a href="https://www.codecogs.com/eqnedit.php?latex=\dpi{300}&space;\huge&space;\huge&space;\int_{-\infty}^{\infty}&space;e^{-x^2}&space;dx&space;=&space;\sqrt{\pi}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\dpi{300}&space;\huge&space;\huge&space;\int_{-\infty}^{\infty}&space;e^{-x^2}&space;dx&space;=&space;\sqrt{\pi}" title="\huge \huge \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}" /></a>
