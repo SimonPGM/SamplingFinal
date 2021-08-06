@@ -11,4 +11,4 @@
 <h2 style="text-align:center"> Gaussian kernel integrated cuz its beatifiul </h2>
 <hr width=50%>
 
-$$\huge \int_{-\infty}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}$$
+$$\huge \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}$$
