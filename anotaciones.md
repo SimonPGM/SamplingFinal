@@ -15,6 +15,7 @@
 	<li> ¿Realiza alguna actividad extracurricular? </li>
 	<li> ¿Cuántas horas semanalmente dedica a leer material distinto al relacionado con actividades académicas? (Literatura, cómics, etc). </li>
 	<li> ¿Desea continuar sus estudios una vez egresado de la educación media? </li>
+	<li> ¿El modelo de educación virtual le fue útil en su aprendizaje? </li>
 	</ul>
 </li>
 
