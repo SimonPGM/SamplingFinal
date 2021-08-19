@@ -35,27 +35,27 @@ library(tidyverse)
 
 \pagestyle{myheadings}
 
-\section{Introducción}
+\section{Introducción} #Gaviria
 
-\section{Planteamiento del problema}
+\section{Planteamiento del problema} #Gaviria
 
 \section{Informe técnico}
-\subsection{Especificación de los elementos de muestreo}
+\subsection{Especificación de los elementos de muestreo} #Juanjo
 
-\subsection{Parámetros a estimar}
+\subsection{Parámetros a estimar} #Juanjo
 
-\subsection{Estadística descriptiva y análsis exploratorio}
+\subsection{Estadística descriptiva y análsis exploratorio} #Santiago
 
-\subsection{Elección del tipo de muestreo}
+\subsection{Elección del tipo de muestreo} #Gaviria
 
-\subsection{Formato de la encuesta}
+\subsection{Formato de la encuesta} #Santiago
 
-\subsection{Notación empleada}
+\subsection{Notación empleada} #Juanjo
 
-\subsection{Cálculo del tamaño de muestra y su distribución}
+\subsection{Cálculo del tamaño de muestra y su distribución} #Simon
 
-\subsection{Estimaciones}
+\subsection{Estimaciones} #Simon
 
-\section{Presentación de resultados}
+\section{Presentación de resultados} #Santiago
 
-\section{Conclusiones y recomendaciones}
+\section{Conclusiones y recomendaciones} #Todos cuando el resto esté listo
