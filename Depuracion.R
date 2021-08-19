@@ -105,3 +105,23 @@ n.6 <- ns.6[[2]]
 
 nfinal <- n.1
 nh <- round(wh.1*nfinal)
+
+sizes <- data.frame(Nh = Nh, nh = nh) %>%
+  mutate(Porcentaje = paste(round(100*nh/Nh), rep("%", 2), sep = ""))
+rownames(sizes) <- c("Noveno", "Décimo", "Once")
+
+sh2s <- matrix(c(sh2.1, sh2.2, sh2.3, sh2.4, sh2.6), nrow = 3) %>%
+  as.data.frame() %>%
+  round(4)
+colnames(sh2s) <- paste(rep("Pregunta", 5), as.character(c(1, 2, 3, 4, 6)))
+rownames(sh2s) <- c("Noveno", "Décimo", "Undécimo")
+
+whs <- matrix(c(wh.1, wh.2, wh.3, wh.4, wh.6), nrow = 3) %>% 
+  as.data.frame() %>%
+  round(4)
+colnames(whs) <- paste(rep("Pregunta", 5), as.character(c(1, 2, 3, 4, 6)))
+rownames(whs) <- c("Noveno", "Décimo", "Undécimo")
+
+write_csv(sizes, "StrataGlobalnSampleSizes.csv")
+write_csv(sh2s, "PilotSampleVariances.csv")
+write_csv(whs, "ProportionsofStrata.csv")
