@@ -35,29 +35,32 @@ library(tidyverse)
 
 \pagestyle{myheadings}
 
-\section{Introducción}
+\section{Introducción} #Gaviria
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-\section{Planteamiento del problema}
+\section{Planteamiento del problema} #Gaviria
 
 \section{Informe técnico}
-\subsection{Especificación de los elementos de muestreo}
+\subsection{Especificación de los elementos de muestreo} #Juanjo
 
-\subsection{Parámetros a estimar}
+\subsection{Parámetros a estimar} #Juanjo
 
-\subsection{Estadística descriptiva y análsis exploratorio}
+\subsection{Estadística descriptiva y análsis exploratorio} #Santiago
 
-\subsection{Elección del tipo de muestreo}
+\subsection{Elección del tipo de muestreo} #Gaviria
 
-\subsection{Formato de la encuesta}
+\subsection{Formato de la encuesta} #Santiago
 
 PERROTE200
 
-\subsection{Notación empleada}
+\subsection{Notación empleada} #Juanjo
 
-\subsection{Cálculo del tamaño de muestra y su distribución}
 
-\subsection{Estimaciones}
+\subsection{Cálculo del tamaño de muestra y su distribución} #Simon
 
-\section{Presentación de resultados}
+\subsection{Estimaciones} #Simon
 
-\section{Conclusiones y recomendaciones}
+\section{Presentación de resultados} #Santiago
+
+\section{Conclusiones y recomendaciones} #Todos cuando el resto esté listo
+
