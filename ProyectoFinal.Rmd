@@ -50,6 +50,8 @@ library(tidyverse)
 
 \subsection{Formato de la encuesta}
 
+PERROTE200
+
 \subsection{Notación empleada}
 
 \subsection{Cálculo del tamaño de muestra y su distribución}
