@@ -38,10 +38,10 @@ library(tidyverse)
 Desde el inicio de la coyuntura actual generada por la pandemia, múltiples actividades cotidianas se han visto afectadas en su desarrollo normal. 
 El sector educativo no es ajeno a esta situación, y por ello, una gran cantidad de instituciones se han visto obligadas a modificar su método de enseñanza tradicional para lograr así su propósito.
 No es inusual escuchar diferentes opiniones externas acerca del modelo de alternancia, el cuál actualmente es el más difundido en colegios que imparten desde educación básica a media. 
-Por ello, el objetivo de esta investigación nace con el propósito de ponerse en la posición de los estudiantes que cursan educación media en el Colegio Paula Montal, para así tener una perspectiva realista sobre la eficacia de este modelo educativo, a fin de que no solo esta institución, sino aquellas interesadas en generar conocimiento de calidad, se autoevalúen y así hagan las correcciones necesarias para refinar sistemas educativos más vanguardistas y aprovechar de este modo todos los beneficios que estos traen.  
+Por ello, el objetivo de esta investigación nace con el propósito de ponerse en la posición de los estudiantes que cursan los últimos tres años de educación básica y media en el Colegio Paula Montal, para así tener una perspectiva realista sobre la eficacia de este modelo educativo, a fin de que no solo esta institución, sino aquellas interesadas en generar conocimiento de calidad, se autoevalúen y así hagan las correcciones necesarias para refinar metodologías educativas más vanguardistas, y aprovechen de este modo todos los beneficios que estas traen implementadas en sus institución.   
 
 \section{Planteamiento del problema}
-Respecto
+Como se mencionó anteriormente, respecto al modelo educativo de alternancia adoptado en la institución, se tienen opiniones divididas entre padres de familia y otros actores que influyen directamente en la educación de los jóvenes. Sin embargo, quienes son afectados directamente por este método de enseñanza son los mismos estudiantes, y de este modo, es objetivo acudir principalmente a estos para conocer el nivel de satisfacción logrado y los resultados obtenidos por el mismo, puesto que el conocimiento del estado de satisfacción de estos, respecto a dicha metodología representa un métrica que permite tanto evaluar el desempeño de este, como aminorar la discrepancia de las opiniones divididas. 
 
 \section{Informe técnico}
 \subsection{Especificación de los elementos de muestreo} #Juanjo
@@ -50,7 +50,10 @@ Respecto
 
 \subsection{Estadística descriptiva y análsis exploratorio} #Santiago
 
-\subsection{Elección del tipo de muestreo} #Gaviria
+\subsection{Elección del tipo de muestreo}
+El ejercicio de esta investigación se pretende realizar sobre los últimos tres grados del colegio Paula Montal, por esto, se puede considerar que la población que conforman los grupos se puede subdividir en los grados noveno, décimo y once, los cuales pueden ser identificados con llaneza. Además de esto, es natural afirmar que un estudiante no puede pertenecer a dos subgrupos simultáneamente bajo ningún motivo, por lo cual, se puede aseverar que estos son disjuntos. 
+Por lo anterior, la estratificación se da de manera directa y de este modo, el método apropiado de muestreo para dicho propósito es el muestreo aleatorio estratificado. 
+Cabe resaltar que en este caso se puede afirmar que dentro de cada uno de los tres estratos existe una gran homogeneidad en el juicio de los estudiantes dado que sus edades y situaciones de vida son relativamente similares. Por otro lado, se considera además que se da una situación de heterogeneidad entre los grupos porque entre estos, sus individuos difieren en edad e inmediatez de egreso y por lo tanto preocupaciones adicionales respecto a su futuro, ideas que refuerzan la elección de este tipo de muestreo.
 
 \subsection{Formato de la encuesta} #Santiago
 
