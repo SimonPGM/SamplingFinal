@@ -13,7 +13,6 @@ header-includes:
 output:
   pdf_document:
     number_sections: true
-    fig.caption: true
 fontsize: 12pt
 papersize: letter
 geometry: margin = 1in
