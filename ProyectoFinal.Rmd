@@ -34,9 +34,14 @@ library(tidyverse)
 
 \pagestyle{myheadings}
 
-\section{Introducción} #Gaviria
+\section{Introducción}
+Desde el inicio de la coyuntura actual generada por la pandemia, múltiples actividades cotidianas se han visto afectadas en su desarrollo normal. 
+El sector educativo no es ajeno a esta situación, y por ello, una gran cantidad de instituciones se han visto obligadas a modificar su método de enseñanza tradicional para lograr así su propósito.
+No es inusual escuchar diferentes opiniones externas acerca del modelo de alternancia, el cuál actualmente es el más difundido en colegios que imparten desde educación básica a media. 
+Por ello, el objetivo de esta investigación nace con el propósito de ponerse en la posición de los estudiantes que cursan educación media en el Colegio Paula Montal, para así tener una perspectiva realista sobre la eficacia de este modelo educativo, a fin de que no solo esta institución, sino aquellas interesadas en generar conocimiento de calidad, se autoevalúen y así hagan las correcciones necesarias para refinar sistemas educativos más vanguardistas y aprovechar de este modo todos los beneficios que estos traen.  
 
-\section{Planteamiento del problema} #Gaviria
+\section{Planteamiento del problema}
+Respecto
 
 \section{Informe técnico}
 \subsection{Especificación de los elementos de muestreo} #Juanjo
