@@ -52,8 +52,8 @@ library(tidyverse)
 \subsection{Notación empleada} #Juanjo
 
 
-\subsection{Cálculo del tamaño de muestra y su distribución} #Simon
-Llegados a este punto, corresponde relatar como fue la realización de el
+\subsection{Cálculo del tamaño de muestra y su distribución}
+Llegados a este punto, corresponde relatar como fue la realización del
 proceso que se llevó a cabo para tomar la decisión de la selección del tamaño
 de muestra y como esta sería repartida en cada uno de los estratos.
 
@@ -62,14 +62,130 @@ se seleccionó una muestra piloto con individuos de cada estrato, esto
 con el fin de realizar estimaciones de la varianza. Dicha muestra piloto
 se distribuyó de la siguiente manera.
 
+\newpage
+
 ```{r pilotsampleshow, echo = F}
-pilotsampledf <- data.frame(N = 6, D = 7, O = 7) 
+pilotsampledf <- data.frame(N = 6, D = 7, O = 7) #ns para la muestra piloto
 rownames(pilotsampledf) <- "Número de individuos"
 pilotsampledf %>%
              kable(row.names = T, col.names = c("Noveno", "Décimo", "Undécimo"),
-                   align = "c") %>%
+                   align = "c", longtable = T, format = "latex", booktab = T) %>%
   kable_styling(position = "center")
 ```
+
+Obteniendo los siguientes resultados (se muestra solo una porción de la información
+recopilada a través de la encuesta para la muestra piloto).
+
+```{r survey, echo = F}
+surveypilot <- read.csv("DatosMuestraPiloto.csv")[,-c(1,2)] #data taken from survey
+cols.questions <- paste(rep("Pregunta", 5), c(1, 2, 3, 4, 6))
+set.seed(11)
+toshowsurvey <- sample(1:20, 7) 
+surveypilot[toshowsurvey, -c(1,6)] %>%
+  kable(col.names = cols.questions,
+        align = "c", longtable = T, format = "latex", booktab = T) %>%
+  kable_styling(position = "center", full_width = F)
+```
+
+Luego de ver algunas respuestas recopiladas a través de la encuesta, se puede
+observar que entre estas se encuentran varias con información ingresada de manera
+incorrecta, por esto se hizo necesario depurar la base de datos previo al trabajo con
+estos para realizar las respectivas estimaciones de las varianzas y así finalmente
+poder estimar el tamaño de muestra.
+
+Una vez realizada la depuración de la base de datos se obtuvo las siguientes
+estimaciones para las varianzas.
+
+```{r pilotvariances, echo=F}
+variancespilot <- read.csv("PilotSampleVariances.csv")
+rownames(variancespilot) <- (grades <- c("Noveno", "Décimo", "Undecimo"))
+kable(variancespilot, col.names = cols.questions, row.names = T,
+      align = "c", longtable = T, format = "latex", booktab = T) %>%
+  kable_styling(position = "center")
+```
+Posteriormente, una vez calculadas las varianzas, se prosiguió a determinar las
+afijaciones, es decir, cual sería aquella proporción de la muestra que pertenecería
+a cada estrato. Debido a que realmente no hubo un costo real en cuanto a desplazamiento,
+contacto con los individuos y se implementó el mismo tiempo en aplicar la encuesta
+a cada estrato de la muestra piloto, se asume igualdad en los costos; por lo que
+se usa la afijación óptima de Neyman en aras de tener en cuenta la información 
+proporcionada por la variabilidad estimada. Esta estimación fue realizada empleando la 
+siguiente expresión.
+
+\begin{equation}
+w_h = \frac{\frac{N_h \sigma_h}{\sqrt{C_h}}}{\sum_{h = 1}^{3} \frac{N_h \sigma_h}{\sqrt{C_h}}}, 1 \leq h \leq 3
+\end{equation}
+
+\newpage
+
+Dicho proceso del cómputo de las afijaciones desembocó en el siguiente resultado.
+
+```{r afijaciones, echo = F}
+whs <- read.csv("ProportionsofStrata.csv")
+rownames(whs) <- grades
+whs %>%
+  kable(col.names = cols.questions, row.names = T,
+        align = "c", longtable = T, format = "latex", booktab = T) %>%
+  kable_styling(position = "center")
+```
+Dado que la estimación del tamaño de muestra representa una cota inferior
+para no superar un límite para el error de estimación fijado previamente,
+se realizó el cómputo del tamaño de muestra para cada uno de los parámetros
+de interés y entre estos se seleccionó el máximo, pues este garantiza alcanzar
+el límite para el error de estimación fijado para dicho parámetro, además de 
+garantizar esto en los otros parámetros (en realidad se esperan límites menores
+dado el tamaño de muestra mayor). Dicho proceso se realizó usando la siguiente
+ecuación, usando límites de error para la estimación de 5% para las proporciones
+y de una hora para los tiempos promedio.
+
+\begin{equation}
+n = \frac{\sum_{h = 1}^{3} \left(\frac{N_{h}^{2}\sigma_{h}^{2}}{w_h}\right)}{N^2D + \sum_{h = 1}^{3} N_{h}\sigma_{h}^{2}}
+\end{equation}
+
+Se procede a mostrar los resultados obtenidos y su comparación.
+
+```{r samplesizes, echo = F}
+samplesizes <- read.csv("EstimatedSampleSizes.csv")
+rownames(samplesizes) <- "Tamaños de muestra estimados"
+
+samplesizes %>%
+  kable(col.names = cols.questions, row.names = T,
+        align = "c", longtable = T, format = "latex", booktab = T) %>%
+  kable_styling(position = "center") %>%
+  column_spec(1, width = "4cm") %>%
+  row_spec(1, align = "c")
+```
+
+Observando la tabla anterior, es claro que el tamaño de muestra a usar es
+de $n = 99$ unidades elementales, con lo cual se garantiza la obtención de los límites
+para el error de estimación propuestos.
+
+Dando culmen a este apartado se presenta una tabla con información acerca del
+tamaño de cada estrato y su respectivo tamaño de muestra, el cual fue calculado
+como $n_h = w_h\cdot n, \ 1 \leq h \leq 3$.
+
+```{r samplesandstrata, echo = F}
+samplesstratasizes <- read.csv("StrataGlobalnSampleSizes.csv")
+rownames(samplesstratasizes) <- grades
+
+samplesstratasizes %>%
+  mutate_all(linebreak) %>%
+  kable("latex", booktabs = T, align = "c", row.names = T, longtable = T,
+        col.names = c("Tamaño del estrato",
+                      "Cantidad de individuos a\nmuestrear en el estrato",
+                      "Porcentaje de individuos a muestrear en el estrato")) %>%
+  kable_styling(position = "center", full_width = F) %>%
+  column_spec(2, width = "1.5cm") %>%
+  column_spec(3, width = "3cm") %>%
+  column_spec(4, width = "3cm")
+```
+
+\subsubsection{Dificultades en la estimación del tamaño de muestra}
+En general el proceso no se tornó difícil, pues en su mayoría los individuos de la
+muestra piloto rellenaron de manera adecuada la encuesta según fue solicitada.
+Sin embargo, fue algo extenuante contactar con los individuos seleccionados en
+dicha muestra, además, se tuvo el percance menor de la depuración de datos que
+no concordaban con el formato requerido y solicitado.
 
 \subsection{Estimaciones} #Simon
 
