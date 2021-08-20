@@ -13,7 +13,6 @@ header-includes:
 output:
   pdf_document:
     number_sections: true
-    fig.caption: true
 fontsize: 12pt
 papersize: letter
 geometry: margin = 1in
@@ -54,6 +53,23 @@ library(tidyverse)
 
 
 \subsection{Cálculo del tamaño de muestra y su distribución} #Simon
+Llegados a este punto, corresponde relatar como fue la realización de el
+proceso que se llevó a cabo para tomar la decisión de la selección del tamaño
+de muestra y como esta sería repartida en cada uno de los estratos.
+
+Con respecto a la estimación del tamaño de muestra, cabe resaltar que 
+se seleccionó una muestra piloto con individuos de cada estrato, esto 
+con el fin de realizar estimaciones de la varianza. Dicha muestra piloto
+se distribuyó de la siguiente manera.
+
+```{r pilotsampleshow, echo = F}
+pilotsampledf <- data.frame(N = 6, D = 7, O = 7) 
+rownames(pilotsampledf) <- "Número de individuos"
+pilotsampledf %>%
+             kable(row.names = T, col.names = c("Noveno", "Décimo", "Undécimo"),
+                   align = "c") %>%
+  kable_styling(position = "center")
+```
 
 \subsection{Estimaciones} #Simon
 
