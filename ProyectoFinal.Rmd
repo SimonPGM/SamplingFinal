@@ -44,7 +44,24 @@ Por ello, el objetivo de esta investigación nace con el propósito de ponerse e
 Como se mencionó anteriormente, respecto al modelo educativo de alternancia adoptado en la institución, se tienen opiniones divididas entre padres de familia y otros actores que influyen directamente en la educación de los jóvenes. Sin embargo, quienes son afectados directamente por este método de enseñanza son los mismos estudiantes, y de este modo, es objetivo acudir principalmente a estos para conocer el nivel de satisfacción logrado y los resultados obtenidos por el mismo, puesto que el conocimiento del estado de satisfacción de estos, respecto a dicha metodología representa un métrica que permite tanto evaluar el desempeño de este, como aminorar la discrepancia de las opiniones divididas. 
 
 \section{Informe técnico}
-\subsection{Especificación de los elementos de muestreo} #Juanjo
+\subsection{Especificación de los elementos de muestreo}
+
+\textbf{Elemento}
+
+Cada uno de los estudiantes matriculados en el colegio Paula Montal que pertenezcan a los grados noveno, décimo o undécimo
+
+\textbf{Población}
+
+Todos los estudiantes matriculados en el colegio Paula Montal que pertenezcan a los grados noveno, décimo o undécimo
+
+\textbf{Unidad de muestreo}
+
+Los grados noveno, décimo y undécimo del colegio Paula Montal
+
+\newpage
+\textbf{Marco Muestral}
+
+Listado de todos los estudiantes matriculados en los grados noveno, décimo o undécimo del colegio Paula Montal
 
 \subsection{Parámetros a estimar} #Juanjo
 
@@ -58,6 +75,7 @@ Cabe resaltar que en este caso se puede afirmar que dentro de cada uno de los tr
 \subsection{Formato de la encuesta} #Santiago
 
 \subsection{Notación empleada} #Juanjo
+
 
 
 \subsection{Cálculo del tamaño de muestra y su distribución}
