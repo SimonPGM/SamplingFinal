@@ -122,6 +122,19 @@ whs <- matrix(c(wh.1, wh.2, wh.3, wh.4, wh.6), nrow = 3) %>%
 colnames(whs) <- paste(rep("Pregunta", 5), as.character(c(1, 2, 3, 4, 6)))
 rownames(whs) <- c("Noveno", "Décimo", "Undécimo")
 
-write_csv(sizes, "StrataGlobalnSampleSizes.csv")
-write_csv(sh2s, "PilotSampleVariances.csv")
-write_csv(whs, "ProportionsofStrata.csv")
+# write_csv(sizes, "StrataGlobalnSampleSizes.csv")
+# write_csv(sh2s, "PilotSampleVariances.csv")
+# write_csv(whs, "ProportionsofStrata.csv")
+
+set.seed(123)
+undecimo <- sample(1:Nh[3], 24)
+set.seed(471)
+decimo <- sample(1:Nh[2], 28)
+set.seed(621)
+noveno <- sample(1:Nh[1], 47)
+dfnoveno <- data.frame(numero = noveno) %>%
+  mutate(grupo = if_else(numero <= 32, "B", "A"),
+         grupo = factor(grupo, levels = c("B", "A")),
+         numero = if_else(grupo == "B", numero, as.integer(numero %% 32)))
+novenoa <- dfnoveno[dfnoveno$grupo == "A",1]
+novenob <- dfnoveno[dfnoveno$grupo == "B",1]
