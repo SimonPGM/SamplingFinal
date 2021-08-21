@@ -63,7 +63,32 @@ Los grados noveno, décimo y undécimo del colegio Paula Montal
 
 Listado de todos los estudiantes matriculados en los grados noveno, décimo o undécimo del colegio Paula Montal
 
-\subsection{Parámetros a estimar} #Juanjo
+\subsection{Parámetros a estimar}
+
+Todos los estudiantes encuestados respondieron las siguiente preguntas:
+
+* ¿Cómo se siente con el modelo de alternancia implementado en el colegio?
+* ¿Cuántas horas invierte estudiando a la semana contenido de las asignaturas propias del colegio?
+* ¿Realiza alguna actividad extracurricular?
+* ¿Cuántas horas semanalmente dedica a leer material distinto al relacionado con actividades académicas? (Literatura, cómics, etc).
+* ¿Desea continuar sus estudios una vez egresado de la educación media?
+* ¿El modelo de educación virtual le fue útil en su aprendizaje? 
+
+Cabe aclarar que los parámetros de mayor interés son los promedios y proporciones mientras que los totales son un añadido pues estos se obtienen al multiplicar cada proporción por el tamaño de la población. Las afijaciones y tamaños muestrales que garantizan los límites de error de estimación deseados se calcularon teniendo en cuenta únicamente los promedios y proporciones.
+Dicho todo esto, los parámetros de interés a estimar son los siguientes:
+
+$$
+\begin{aligned}
+P_1 &: \text{La proporción de estudiantes satisfechos con el modelo de alternancia} \\
+A_1 &: \text{Número total de estudiantes satisfechos con el modelo de alternancia} \\
+\mu_2 &: \text{Promedio de horas semanales que invierte estudiando asignaturas propias del colegio} \\
+P_3 &: \text{Proporción de estudiantes que realizan actividades extracurriculares} \\
+A_3 &: \text{Número total de estudiantes que realizan actividades extracurriculares} \\
+\mu_4 &: \text{Promedio de horas semanales dedicadas a leer material diferente al académico} \\
+P_6 &: \text{Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje} \\
+A_6 &: \text{Número total de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje}
+\end{aligned}
+$$
 
 \subsection{Estadística descriptiva y análsis exploratorio} #Santiago
 
@@ -76,7 +101,7 @@ Cabe resaltar que en este caso se puede afirmar que dentro de cada uno de los tr
 
 \subsection{Notación empleada} #Juanjo
 
-
+Como se mencionó anteriormente, la población fue estratificada por el grado de cada estudiante, con lo que se tiene un total de 3 estratos, siendo el grado noveno el primer estrato, décimo el segundo y undécimo el tercero, además cada estudiante respondió un total de 6 preguntas.
 
 \subsection{Cálculo del tamaño de muestra y su distribución}
 Llegados a este punto, corresponde relatar como fue la realización del
