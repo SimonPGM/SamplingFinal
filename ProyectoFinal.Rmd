@@ -99,10 +99,29 @@ Cabe resaltar que en este caso se puede afirmar que dentro de cada uno de los tr
 
 \subsection{Formato de la encuesta} #Santiago
 
-\subsection{Notación empleada} #Juanjo
+\subsection{Notación empleada} 
 
-Como se mencionó anteriormente, la población fue estratificada por el grado de cada estudiante, con lo que se tiene un total de 3 estratos, siendo el grado noveno el primer estrato, décimo el segundo y undécimo el tercero, además cada estudiante respondió un total de 6 preguntas.
+Como se mencionó anteriormente, la población fue estratificada por el grado en curso de cada estudiante, con lo que se tiene un total de 3 estratos, siendo noveno el primer estrato, décimo el segundo y undécimo el tercero. 
 
+Sean $I = \lbrace 1,3,6\rbrace$, y $J = \lbrace 2,4\rbrace$, de ahora en adelante se asumirá $\ i \in I, \ j \in J$ para aliviar la notación, entonces:
+
+$$
+\begin{aligned}
+H&: \text{Número de estratos en la población} \\
+N_h&: \text{Número total de estudiantes en el }h-\text{ésimo estrato} \\
+N&: \text{Número total de estudiantes en los grados noveno, décimo o undécimo, claramente}  \\ N &= \sum_{h=1}^{3} N_h \\
+W_h &: \text{Proporción de la población que pertence al } h-\text{ésimo estrato} \\
+n_h&: \text{Número de estudiantes muestreados en el } h-\text{ésimo estrato} \\
+p_i^{(h)}&: i-\text{ésima proporción muestral en el } h-\text{ésimo estrato} \\
+\hat{A}_i^{(h)}&: i-\text{ésimo total muestral en el } h-\text{ésimo estrato} \\
+\bar{y}_j^{(h)}&: j-\text{ésima media muestral en el }h-\text{ésimo estrato} \\
+S_j^{2(h)}&: j-\text{ésima varianza muestral en el }h-\text{ésimo estrato} \\
+p_i &: i-\text{ésima proporción global estimada} \\
+\hat{A}_i &: i-\text{ésimo total global estimado}  \\
+\hat{\mu}_j &: j-\text{ésima media global estimada} \\
+B &: \text{Límite de error de estimación}
+\end{aligned}
+$$
 \subsection{Cálculo del tamaño de muestra y su distribución}
 Llegados a este punto, corresponde relatar como fue la realización del
 proceso que se llevó a cabo para tomar la decisión de la selección del tamaño
