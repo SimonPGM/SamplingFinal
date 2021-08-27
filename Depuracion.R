@@ -40,7 +40,7 @@ once <- corrected %>%
 
 ldf <- list(noveno, decimo, once)
 
-Nh <- c(32 + 31,38, 32)
+Nh <- c(32 ,38, 32)
 #Pregunta 1
 sh2.1 <- c()
 for (i in 1:3) {
@@ -122,9 +122,9 @@ whs <- matrix(c(wh.1, wh.2, wh.3, wh.4, wh.6), nrow = 3) %>%
 colnames(whs) <- paste(rep("Pregunta", 5), as.character(c(1, 2, 3, 4, 6)))
 rownames(whs) <- c("Noveno", "Décimo", "Undécimo")
 
-# write_csv(sizes, "StrataGlobalnSampleSizes.csv")
-# write_csv(sh2s, "PilotSampleVariances.csv")
-# write_csv(whs, "ProportionsofStrata.csv")
+write_csv(sizes, "StrataGlobalnSampleSizes.csv")
+write_csv(sh2s, "PilotSampleVariances.csv")
+write_csv(whs, "ProportionsofStrata.csv")
 
 set.seed(123)
 undecimo <- sample(1:Nh[3], 24)
