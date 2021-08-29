@@ -125,10 +125,10 @@ rownames(whs) <- c("Noveno", "Décimo", "Undécimo")
 ns <- data.frame(p1 = n.1, p2 = n.2, p3 = n.3, p4 = n.4, p6 = n.6)
 
 
-write_csv(sizes, "StrataGlobalnSampleSizes.csv")
-write_csv(sh2s, "PilotSampleVariances.csv")
-write_csv(whs, "ProportionsofStrata.csv")
-write_csv(ns, "EstimatedSampleSizes.csv")
+# write_csv(sizes, "StrataGlobalnSampleSizes.csv")
+# write_csv(sh2s, "PilotSampleVariances.csv")
+# write_csv(whs, "ProportionsofStrata.csv")
+# write_csv(ns, "EstimatedSampleSizes.csv")
 
 set.seed(123)
 undecimo <- sample(1:Nh[3], 24)
@@ -142,3 +142,21 @@ dfnoveno <- data.frame(numero = noveno) %>%
          numero = if_else(grupo == "B", numero, as.integer(numero %% 32)))
 novenoa <- dfnoveno[dfnoveno$grupo == "A",1]
 novenob <- dfnoveno[dfnoveno$grupo == "B",1]
+
+#depuracion base completa
+full <- read.csv("Respuestascomp.csv", header = T)[-c(89, 90), ]
+
+full <- full %>%
+  arrange(Marca.temporal)
+
+full <- full[-c(2, 6,7),]
+
+full <- full %>%
+  arrange(Dirección.de.correo.electrónico)
+
+full <- full[-c(37, 45, 55, 68), ]
+full[74, 3] <- "Decimo"
+full <- full[, -c(1, 2, 8)]
+rownames(full) <- as.character(1:81)
+colnames(full) <- c("Grado", paste("Pregunta_", c(1:4, 6), sep = ""))
+write.csv(full, "FixedFullDataBase.csv", row.names = F)

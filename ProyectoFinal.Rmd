@@ -257,7 +257,16 @@ Sin embargo, fue algo extenuante contactar con los individuos seleccionados en
 dicha muestra, además, se tuvo el percance menor de la depuración de datos que
 no concordaban con el formato requerido y solicitado.
 
-\subsection{Estimaciones} #Simon
+\subsection{Estimaciones}
+
+Llegados a este punto y teniendo en cuenta los desarrollos anteriores,
+se puede proceder con las correspondientes estimaciones para los parámetros de interés con sus respectivos límites para el error de estimación y
+los límites del intervalo de confianza de aproximadamente el 95% de confianza.
+
+```{r estimations, echo=F}
+
+```
+
 
 \section{Presentación de resultados} #Santiago
 
