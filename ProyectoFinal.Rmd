@@ -33,6 +33,7 @@ library(tidyverse)
 \newpage
 
 \pagestyle{myheadings}
+\setcounter{page}{3}
 
 \section{Introducción}
 Desde el inicio de la coyuntura actual generada por la pandemia, múltiples actividades cotidianas se han visto afectadas en su desarrollo normal. 
@@ -91,6 +92,10 @@ A_6 &: \text{Número total de estudiantes que consideró útil la virtualidad en
 $$
 
 \subsection{Estadística descriptiva y análsis exploratorio} #Santiago
+
+```{r dataforEDAED, echo=F}
+datoscomp <- read.csv("FixedFullDataBase.csv") #leyendo datos para EDAED
+```
 
 \subsection{Elección del tipo de muestreo}
 El ejercicio de esta investigación se pretende realizar sobre los últimos tres grados del colegio Paula Montal, por esto, se puede considerar que la población que conforman los grupos se puede subdividir en los grados noveno, décimo y once, los cuales pueden ser identificados con llaneza. Además de esto, es natural afirmar que un estudiante no puede pertenecer a dos subgrupos simultáneamente bajo ningún motivo, por lo cual, se puede aseverar que estos son disjuntos. 
