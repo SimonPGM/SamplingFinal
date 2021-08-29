@@ -162,8 +162,8 @@ ggplot(bd_desc_2, aes(x = Respuesta)) +
 Adicionalmente, se presentan de forma numérica, estadísticos descriptivos básicos de la base de datos:
 
 ```{r EDAED-descriptivos3, echo = F}
-data_desc <- cbind(as.data.frame(unclass(tapply(bd_desc_2$Respuesta, bd_desc_2$Pregunta, summary)$`Pregunta 2: Horas semanales \n que invierte  estudiando`)), 
-                   as.data.frame(unclass(tapply(bd_desc_2$Respuesta, bd_desc_2$Pregunta, summary)$`Pregunta 4: Horas semanales dedicadas \n a leer material diferente al académico`)))
+data_desc <- cbind(as.data.frame(unclass(round(tapply(bd_desc_2$Respuesta, bd_desc_2$Pregunta, summary)$`Pregunta 2: Horas semanales \n que invierte  estudiando`,2))), 
+                   as.data.frame(unclass(round(tapply(bd_desc_2$Respuesta, bd_desc_2$Pregunta, summary)$`Pregunta 4: Horas semanales dedicadas \n a leer material diferente al académico`,2))))
 
 names(data_desc) <- c(pre2, pre4)
 
@@ -252,7 +252,8 @@ toshowsurvey <- sample(1:20, 7)
 surveypilot[toshowsurvey, -c(1,6)] %>%
   kable(col.names = cols.questions,
         align = "c", longtable = T, format = "latex", booktab = T) %>%
-  kable_styling(position = "center", full_width = F)
+  kable_styling(position = "center", full_width = F,
+                latex_options = c("hold_position", "repeat_header"))
 ```
 
 Luego de ver algunas respuestas recopiladas a través de la encuesta, se puede
@@ -645,10 +646,85 @@ result6A %>% round %>%
 
 \section{Presentación de resultados} #Santiago
 
-```{r dfresults, echo = F}
+```{r results-data, echo = F}
 #data frame listo para hacer el plot
-results <- read.csv("ResultsReadyToPlot.csv", header = T)
+results <- read.csv("ResultsReadyToPlot.csv", header = T, encoding = "UTF-8")
 ```
+
+```{r results-plot1, echo=FALSE, fig.align='center', fig.height=7}
+# Lectura BD
+bd <- results
+
+# Arreglo
+level1 <- "Proporción de \n estudiantes \n satisfechos con \n el modelo de \n alternacia"
+level2 <- "Promedio de \n horas semanales \n que invierte \n estudiando"
+level3 <- "Proporción de \n estudiantes \n que realizan \n actividades \n extracurriculares"
+level4 <- "Promedio de \n horas semanales \n dedicadas a leer \n material diferente al \n académico"
+level6 <- "Proporción de \n estudiantes que \n consideró útil la \n virtualidad en su \n proceso de aprendizaje"
+
+
+bd <- bd %>% mutate(grupo = fct_relevel(grupo, 
+                          "Noveno", "Décimo", "Undécimo", "Global"),
+                    parametro = case_when(parametro == "P_1" ~ level1,
+                                          parametro == "mu_2" ~ level2,
+                                          parametro == "P_3" ~ level3,
+                                          parametro == "mu_4" ~  level4,
+                                          parametro == "P_6" ~ level6,
+                                          TRUE ~  parametro),
+                    parametro = fct_relevel(parametro,
+                                            level1, level2, level3, level4, level6 ))
+
+ggplot(bd, aes(x = 1, y = est)) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5),
+        strip.text.y = element_text(size = 8, angle = 0)) +
+  geom_errorbar(aes(ymin = LI, ymax = LS), width = 0.4, colour = "black") +
+  geom_point(size = 1, colour = "red") +
+  facet_grid(parametro ~ grupo, scales = "free") +
+  guides(x = "none") +
+  scale_x_continuous(limits = c(0, 2), breaks = NULL) +
+  labs(title = "Presentación de resultados", y = "Estimación e intervalo de confianza al 95%", x = "Grupo")
+
+
+```
+
+\newpage
+
+```{r results-table1, echo=FALSE}
+
+bd_wider <- pivot_wider(bd, names_from = "grupo", values_from = c(est, B, LI, LS)) %>%
+             select(parametro,
+                    est_Noveno, LI_Noveno, LS_Noveno,
+                    est_Décimo, LI_Décimo, LS_Décimo,
+                    est_Undécimo, LI_Undécimo, LS_Undécimo,
+                    est_Global,  LI_Global, LS_Global
+                    )
+
+bd_wider[,2:13] <- round(bd_wider[,2:13], 2)
+
+kable(bd_wider[,1:13],  
+      booktabs = T,
+      col.names = c("Parámetro",
+                    "Est.",
+                    "LI",
+                    "LS",
+                    "Est.",
+                    "LI",
+                    "LS",
+                    "Est.",
+                    "LI",
+                    "LS",
+                    "Est.",
+                    "LI",
+                    "LS"
+                    ),
+      align=rep('c', 13)) %>%
+column_spec(1, width = "3cm") %>%
+add_header_above(c(" "=1, "Noveno" = 3, "Décimo" = 3, "Undécimo" = 3, "Global" = 3))  %>%
+kable_styling(latex_options = c("striped", "hold_position"))
+```
+
+
 
 
 \section{Conclusiones y recomendaciones} #Todos cuando el resto esté listo
