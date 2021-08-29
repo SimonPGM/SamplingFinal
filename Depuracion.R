@@ -104,7 +104,7 @@ ns.6 <- samplesize(Nh, sh2.6, wh.6, D.6)
 n.6 <- ns.6[[2]]
 
 nfinal <- n.1
-nh <- round(wh.1*nfinal)
+nh <- round(wh.1*nfinal) + c(1, 0, 0)
 
 sizes <- data.frame(Nh = Nh, nh = nh) %>%
   mutate(Porcentaje = paste(round(100*nh/Nh), rep("%", 2), sep = ""))
@@ -122,9 +122,9 @@ whs <- matrix(c(wh.1, wh.2, wh.3, wh.4, wh.6), nrow = 3) %>%
 colnames(whs) <- paste(rep("Pregunta", 5), as.character(c(1, 2, 3, 4, 6)))
 rownames(whs) <- c("Noveno", "Décimo", "Undécimo")
 
-# write_csv(sizes, "StrataGlobalnSampleSizes.csv")
-# write_csv(sh2s, "PilotSampleVariances.csv")
-# write_csv(whs, "ProportionsofStrata.csv")
+write_csv(sizes, "StrataGlobalnSampleSizes.csv")
+write_csv(sh2s, "PilotSampleVariances.csv")
+write_csv(whs, "ProportionsofStrata.csv")
 
 set.seed(123)
 undecimo <- sample(1:Nh[3], 24)
