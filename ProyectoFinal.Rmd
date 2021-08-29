@@ -513,7 +513,9 @@ result6A <- (N*result6)  #resultados pregunta6 A
 # dffinal[20,] <- cbind("Global", result6)
 # 
 # dffinal <- dffinal %>%
-#   mutate(parametro = rep(c("P_1", "mu_2", "P_3", "mu_4", "P_6"), 4)) %>%
+#   mutate(parametro = c(rep("P_1",3), rep("mu_2",3), rep("P_3",3),
+#                            rep("mu_4",3), rep("P_6",3),
+#                        "P_1", "mu_2", "P_3", "mu_4", "P_6")) %>%
 #   select(grupo, parametro, everything())
 # 
 # write.csv(dffinal, "ResultsReadyToPlot.csv", row.names = F)
@@ -737,8 +739,9 @@ correspondientes de las unidades muestrales seleccionadas a través de la
 generación de números aleatorios.
 
 ```{r tablanotround, echo = F}
-# results %>% 
-#   mutate(parametro = rep(c("$P_1$", "$\\mu_2$", "$P_3$", "$mu_4$", "P_6"), 4))
-#   kable(booktab = )
+param <- c("$P_{1}^{(1)}$", "$\\mu_2$", "$P_3$", "$mu_4$", "P_6")
+results %>% 
+  mutate(parametro = rep(c(), 4))
+  kable(booktab = )
 ```
 
