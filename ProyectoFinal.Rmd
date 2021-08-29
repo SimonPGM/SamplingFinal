@@ -740,7 +740,7 @@ generación de números aleatorios.
 
 ```{r tablanotround, echo = F}
 param <- c("$P_{1}^{(1)}$", "$\\mu_2$", "$P_3$", "$mu_4$", "P_6")
-results %>% 
+results %>%
   mutate(parametro = rep(c(), 4))
   kable(booktab = )
 ```
