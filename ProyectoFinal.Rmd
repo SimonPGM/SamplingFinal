@@ -91,11 +91,104 @@ A_6 &: \text{Número total de estudiantes que consideró útil la virtualidad en
 \end{aligned}
 $$
 
-\subsection{Estadística descriptiva y análsis exploratorio} #Santiago
+\subsection{Estadística descriptiva y análisis exploratorio} 
 
-```{r dataforEDAED, echo=F}
+
+```{r EDAED-data, echo=F}
 datoscomp <- read.csv("FixedFullDataBase.csv") #leyendo datos para EDAED
+
+datoscomp2 <- datoscomp %>%
+  mutate(Pregunta_1 = if_else(Pregunta_1 == "Satisfecho", 1, 0),
+         Pregunta_3 = if_else(Pregunta_3 == "Si", 1, 0),
+         Pregunta_6 = if_else(Pregunta_6 == "Si", 1, 0))
+
+pro1 <- "Pregunta 1: \n Satisfacción con \n el modelo de \n alternancia"
+pro3 <- "Pregunta 3: \n ¿Realiza \n actividades \n extracurriculares?"
+pro6 <- "Pregunta 6: \n ¿Considero útil \n la virtualidad \n en su proceso \n de aprendizaje?"
+pre2 <- "Pregunta 2: Horas semanales \n que invierte  estudiando"
+pre4 <- "Pregunta 4: Horas semanales dedicadas \n a leer material diferente al académico"
+
+# Base de datos para graficar preguntas dicotómicas
+bd_desc_pro <- datoscomp2[c("Grado", "Pregunta_1", "Pregunta_3", "Pregunta_6")] %>%
+                pivot_longer(cols = c("Pregunta_1", "Pregunta_3", "Pregunta_6"), 
+                             names_to = "Pregunta",
+                             values_to = "Respuesta") %>%
+                mutate(Grado = fct_relevel(Grado, "Noveno", "Decimo", "Undecimo"),
+                      Respuesta = case_when(Respuesta == 1 ~ "Sí",
+                                            Respuesta == 0 ~ "No",
+                                            TRUE ~ as.character(Respuesta)),
+                      Respuesta = fct_relevel(Respuesta, "Sí", "No"),
+                      Pregunta = case_when(Pregunta == "Pregunta_1" ~ pro1,
+                                           Pregunta == "Pregunta_3" ~ pro3,
+                                           Pregunta == "Pregunta_6" ~ pro6,
+                                           TRUE ~ Pregunta))
+
+# Base de datos preguntas politómicas
+bd_desc_2 <-  datoscomp2[c("Grado", "Pregunta_2", "Pregunta_4")] %>%
+                pivot_longer(cols = c("Pregunta_2", "Pregunta_4"), 
+                             names_to = "Pregunta",
+                             values_to = "Respuesta") %>%
+              mutate(Grado = fct_relevel(Grado, "Noveno", "Decimo", "Undecimo"),
+                     Pregunta = case_when(Pregunta == "Pregunta_2" ~ pre2,
+                                           Pregunta == "Pregunta_4" ~ pre4,
+                                           TRUE ~ Pregunta))
 ```
+
+```{r EDAED-plots1, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+ggplot(bd_desc_pro, aes(Grado, fill = Respuesta)) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  geom_bar(position = "fill",
+           color="black") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_manual(values=c('#7fff00','#ff6347')) +
+  labs(y = "Porcentaje",
+       x = "Grado") +
+  facet_wrap(~Pregunta, ncol = 3)
+```
+
+```{r EDAED-plots2, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center', fig.height=4}
+ggplot(bd_desc_2, aes(x = Respuesta)) +
+  theme_bw() +
+  theme(plot.title = element_text(hjust = 0.5),
+        strip.text.y = element_text(size = 8, angle = 90)) +
+  geom_histogram(color="black", fill="lightblue") +
+  facet_grid(~Pregunta) +
+  labs(y = "Frecuencia",
+       x = "Horas")
+  
+```
+
+Adicionalmente, se presentan de forma numérica, estadísticos descriptivos básicos de la base de datos:
+
+```{r EDAED-descriptivos3, echo = F}
+data_desc <- cbind(as.data.frame(unclass(tapply(bd_desc_2$Respuesta, bd_desc_2$Pregunta, summary)$`Pregunta 2: Horas semanales \n que invierte  estudiando`)), 
+                   as.data.frame(unclass(tapply(bd_desc_2$Respuesta, bd_desc_2$Pregunta, summary)$`Pregunta 4: Horas semanales dedicadas \n a leer material diferente al académico`)))
+
+names(data_desc) <- c(pre2, pre4)
+
+kable(data_desc,
+      booktabs = T,
+      align = c('c', 'c'),
+      row.names = T) %>%
+      kable_styling(latex_options = c("HOLD_position")) %>%
+      column_spec(2:3, width="7cm")
+```
+
+```{r EDAED-descriptivos2, echo = F}
+tabla_des_1 <- with(bd_desc_pro, table(Pregunta, Respuesta))
+kable(round(prop.table(tabla_des_1, margin = 1), 3),
+      booktabs = T,
+      row.names = T,
+      col.names = c("% Sí", "% No")) %>%
+      kable_styling(latex_options = c("HOLD_position"))
+
+```
+
+
+
+
+
 
 \subsection{Elección del tipo de muestreo}
 El ejercicio de esta investigación se pretende realizar sobre los últimos tres grados del colegio Paula Montal, por esto, se puede considerar que la población que conforman los grupos se puede subdividir en los grados noveno, décimo y once, los cuales pueden ser identificados con llaneza. Además de esto, es natural afirmar que un estudiante no puede pertenecer a dos subgrupos simultáneamente bajo ningún motivo, por lo cual, se puede aseverar que estos son disjuntos. 
