@@ -195,7 +195,21 @@ El ejercicio de esta investigación se pretende realizar sobre los últimos tres
 Por lo anterior, la estratificación se da de manera directa y de este modo, el método apropiado de muestreo para dicho propósito es el muestreo aleatorio estratificado. 
 Cabe resaltar que en este caso se puede afirmar que dentro de cada uno de los tres estratos existe una gran homogeneidad en el juicio de los estudiantes dado que sus edades y situaciones de vida son relativamente similares. Por otro lado, se considera además que se da una situación de heterogeneidad entre los grupos porque entre estos, sus individuos difieren en edad e inmediatez de egreso y por lo tanto preocupaciones adicionales respecto a su futuro, ideas que refuerzan la elección de este tipo de muestreo.
 
-\subsection{Formato de la encuesta} #Santiago
+\subsection{Formato de la encuesta} 
+
+Para la realización de la encuesta, se utilizó un formulario de Google Docs, el cual se presenta a continuación:
+
+\begin{figure}[H]
+\centering
+\includegraphics[]{encuesta1.PNG}
+\end{figure}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[]{encuesta2.PNG}
+\end{figure}
+
 
 \subsection{Notación empleada} 
 
@@ -646,7 +660,7 @@ result6A %>% round %>%
   kable_styling(position = "center")
 ```
 
-\section{Presentación de resultados} #Santiago
+\section{Presentación de resultados}
 
 ```{r results-data, echo = F}
 #data frame listo para hacer el plot
