@@ -104,7 +104,7 @@ datoscomp2 <- datoscomp %>%
 
 pro1 <- "Pregunta 1: \n Satisfacción con \n el modelo de \n alternancia"
 pro3 <- "Pregunta 3: \n ¿Realiza \n actividades \n extracurriculares?"
-pro6 <- "Pregunta 6: \n ¿Considero útil \n la virtualidad \n en su proceso \n de aprendizaje?"
+pro6 <- "Pregunta 6: \n ¿Consideró útil \n la virtualidad \n en su proceso \n de aprendizaje?"
 pre2 <- "Pregunta 2: Horas semanales \n que invierte  estudiando"
 pre4 <- "Pregunta 4: Horas semanales dedicadas \n a leer material diferente al académico"
 
