@@ -264,7 +264,8 @@ se puede proceder con las correspondientes estimaciones para los parámetros de 
 los límites del intervalo de confianza de aproximadamente el 95% de confianza.
 
 Cabe resaltar el uso de las siguientes expresiones para el cálculo de la
-estimación de los parámetros.
+estimación de los parámetros de interés y de otros como totales asociados
+a las propociones.
 
 Para la estimación de la media global:
 
