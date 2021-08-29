@@ -103,7 +103,7 @@ Cabe resaltar que en este caso se puede afirmar que dentro de cada uno de los tr
 
 Como se mencionó anteriormente, la población fue estratificada por el grado en curso de cada estudiante, con lo que se tiene un total de 3 estratos, siendo noveno el primer estrato, décimo el segundo y undécimo el tercero. 
 
-Sean $I = \lbrace 1,3,6\rbrace$, y $J = \lbrace 2,4\rbrace$, de ahora en adelante se asumirá $\ i \in I, \ j \in J$ para aliviar la notación, entonces:
+Sean $I = \lbrace 1,3,6\rbrace$, $J = \lbrace 2,4\rbrace$ y $H = \lbrace 1, 2,3\rbrace$, de ahora en adelante se asumirá $\ i \in I, \ j \in J, h \in H$ para aliviar la notación, entonces:
 
 $$
 \begin{aligned}
@@ -125,14 +125,14 @@ $$
 \subsection{Cálculo del tamaño de muestra y su distribución}
 Llegados a este punto, corresponde relatar como fue la realización del
 proceso que se llevó a cabo para tomar la decisión de la selección del tamaño
-de muestra y como esta sería repartida en cada uno de los estratos.
+de muestra y como esta sería repartida en cada uno de los estratos, teniendo
+en cuenta que cada estrato tiene un tamaño de 32, 38 y 32 unidades
+elementales respectivamente.
 
 Con respecto a la estimación del tamaño de muestra, cabe resaltar que 
 se seleccionó una muestra piloto con individuos de cada estrato, esto 
 con el fin de realizar estimaciones de la varianza. Dicha muestra piloto
 se distribuyó de la siguiente manera.
-
-\newpage
 
 ```{r pilotsampleshow, echo = F}
 pilotsampledf <- data.frame(N = 6, D = 7, O = 7) #ns para la muestra piloto
@@ -183,10 +183,8 @@ proporcionada por la variabilidad estimada. Esta estimación fue realizada emple
 siguiente expresión.
 
 \begin{equation}
-w_h = \frac{\frac{N_h \sigma_h}{\sqrt{C_h}}}{\sum_{h = 1}^{3} \frac{N_h \sigma_h}{\sqrt{C_h}}}, 1 \leq h \leq 3
+w_h = \frac{\frac{N_h \sigma_h}{\sqrt{C_h}}}{\sum_{h = 1}^{3} \frac{N_h \sigma_h}{\sqrt{C_h}}}
 \end{equation}
-
-\newpage
 
 Dicho proceso del cómputo de las afijaciones desembocó en el siguiente resultado.
 
@@ -227,12 +225,14 @@ samplesizes %>%
 ```
 
 Observando la tabla anterior, es claro que el tamaño de muestra a usar es
-de $n = 99$ unidades elementales, con lo cual se garantiza la obtención de los límites
-para el error de estimación propuestos.
+de $n = 81$ unidades elementales, con lo cual se garantiza la obtención de los 
+límites para el error de estimación propuestos.
+
+\newpage
 
 Dando culmen a este apartado se presenta una tabla con información acerca del
 tamaño de cada estrato y su respectivo tamaño de muestra, el cual fue calculado
-como $n_h = w_h\cdot n, \ 1 \leq h \leq 3$.
+como $n_h = w_h\cdot n$.
 
 ```{r samplesandstrata, echo = F}
 samplesstratasizes <- read.csv("StrataGlobalnSampleSizes.csv")

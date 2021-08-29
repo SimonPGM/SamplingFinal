@@ -122,9 +122,13 @@ whs <- matrix(c(wh.1, wh.2, wh.3, wh.4, wh.6), nrow = 3) %>%
 colnames(whs) <- paste(rep("Pregunta", 5), as.character(c(1, 2, 3, 4, 6)))
 rownames(whs) <- c("Noveno", "Décimo", "Undécimo")
 
+ns <- data.frame(p1 = n.1, p2 = n.2, p3 = n.3, p4 = n.4, p6 = n.6)
+
+
 write_csv(sizes, "StrataGlobalnSampleSizes.csv")
 write_csv(sh2s, "PilotSampleVariances.csv")
 write_csv(whs, "ProportionsofStrata.csv")
+write_csv(ns, "EstimatedSampleSizes.csv")
 
 set.seed(123)
 undecimo <- sample(1:Nh[3], 24)
