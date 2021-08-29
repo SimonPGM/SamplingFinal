@@ -663,9 +663,20 @@ correspondientes de las unidades muestrales seleccionadas a través de la
 generación de números aleatorios.
 
 ```{r tablanotround, echo = F}
-param <- c("$P_{1}^{(1)}$", "$\\mu_2$", "$P_3$", "$mu_4$", "P_6")
+param <- c("$P_{1}^{(1)}$", "$P_{1}^{(2)}$", "$P_{1}^{(3)}$",
+           "$\\mu_{2}^{(1)}$",  "$\\mu_{2}^{(3)}$",  "$\\mu_{2}^{(3)}$",
+           "$P_{3}^{(1)}$", "$P_{3}^{(2)}$", "$P_{3}^{(3)}$",
+           "$\\mu_{4}^{(1)}$",  "$\\mu_{4}^{(3)}$",  "$\\mu_{4}^{(3)}$",
+           "$P_{6}^{(1)}$", "$P_{6}^{(2)}$", "$P_{6}^{(3)}$",
+           "$P_1$", "$\\mu_2$", "$P_3$", "$\\mu_4$","$P_6$"
+           )
 results %>% 
-  mutate(parametro = rep(c(), 4))
-  kable(booktab = )
+  mutate(parametro = param) %>%
+  kable(booktab = T, col.names = c("Grupo", "Parámetro",
+                                   "Estimación", "B", "Límite inferior",
+                                   "Límite superior"),
+        align = "c", longtable = T, escape = F,
+        caption = "Estimaciones sin redondear") %>%
+  kable_styling(position = "center")
 ```
 
