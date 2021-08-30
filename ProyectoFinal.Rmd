@@ -740,7 +740,8 @@ kable(bd_wider[,1:13],
                     "LI",
                     "LS"
                     ),
-      align=rep('c', 13), longtable = T) %>%
+      align=rep('c', 13), longtable = T,
+      caption = "Tabla resumen de los resultados") %>%
 column_spec(1, width = "3cm") %>%
 add_header_above(c(" "=1, "Noveno" = 3, "Décimo" = 3, "Undécimo" = 3, "Global" = 3))  %>%
 kable_styling(latex_options = c("striped", "hold_position"))
