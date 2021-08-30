@@ -39,7 +39,7 @@ library(tidyverse)
 Desde el inicio de la coyuntura actual generada por la pandemia, múltiples actividades cotidianas se han visto afectadas en su desarrollo normal. 
 El sector educativo no es ajeno a esta situación, y por ello, una gran cantidad de instituciones se han visto obligadas a modificar su método de enseñanza tradicional para lograr así su propósito.
 No es inusual escuchar diferentes opiniones externas acerca del modelo de alternancia, el cuál actualmente es el más difundido en colegios que imparten desde educación básica a media. 
-Por ello, el objetivo de esta investigación nace con el propósito de ponerse en la posición de los estudiantes que cursan los últimos tres años de educación básica y media en el Colegio Paula Montal, para así tener una perspectiva realista sobre la eficacia de este modelo educativo, a fin de que no solo esta institución, sino aquellas interesadas en generar conocimiento de calidad, se autoevalúen y así hagan las correcciones necesarias para refinar metodologías educativas más vanguardistas, y aprovechen de este modo todos los beneficios que estas traen implementadas en sus institución.   
+Por ello, el objetivo de esta investigación nace con el propósito de ponerse en la posición de los estudiantes que cursan los últimos tres años de educación básica y media en el Colegio Paula Montal, para así tener una perspectiva realista sobre la eficacia de este modelo educativo, a fin de que no solo esta institución, sino aquellas interesadas en generar conocimiento de calidad, se autoevalúen y así hagan las correcciones necesarias para refinar metodologías educativas más vanguardistas, y aprovechen de este modo todos los beneficios que estas traen implementadas en su institución.   
 
 \section{Planteamiento del problema}
 Como se mencionó anteriormente, respecto al modelo educativo de alternancia adoptado en la institución, se tienen opiniones divididas entre padres de familia y otros actores que influyen directamente en la educación de los jóvenes. Sin embargo, quienes son afectados directamente por este método de enseñanza son los mismos estudiantes, y de este modo, es objetivo acudir principalmente a estos para conocer el nivel de satisfacción logrado y los resultados obtenidos por el mismo, puesto que el conocimiento del estado de satisfacción de estos, respecto a dicha metodología representa un métrica que permite tanto evaluar el desempeño de este, como aminorar la discrepancia de las opiniones divididas. 
@@ -80,14 +80,15 @@ Dicho todo esto, los parámetros de interés a estimar son los siguientes:
 
 $$
 \begin{aligned}
-P_1 &: \text{La proporción de estudiantes satisfechos con el modelo de alternancia} \\
-A_1 &: \text{Número total de estudiantes satisfechos con el modelo de alternancia} \\
-\mu_2 &: \text{Promedio de horas semanales que invierte estudiando asignaturas propias del colegio} \\
-P_3 &: \text{Proporción de estudiantes que realizan actividades extracurriculares} \\
-A_3 &: \text{Número total de estudiantes que realizan actividades extracurriculares} \\
-\mu_4 &: \text{Promedio de horas semanales dedicadas a leer material diferente al académico} \\
-P_6 &: \text{Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje} \\
-A_6 &: \text{Número total de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje}
+P_1 &: \text{Proporción de estudiantes satisfechos con el modelo de alternancia.} \\
+A_1 &: \text{Número total de estudiantes satisfechos con el modelo de alternancia.} \\
+\mu_2 &: \text{Promedio de horas semanales que los estudiantes invierten estudiando asignaturas } \\
+& \hspace{0.3cm}\text{propias del colegio.} \\
+P_3 &: \text{Proporción de estudiantes que realizan actividades extracurriculares.} \\
+A_3 &: \text{Número total de estudiantes que realizan actividades extracurriculares.} \\
+\mu_4 &: \text{Promedio de horas semanales que los estudiantes dedican a leer material diferente al académico.} \\
+P_6 &: \text{Proporción de estudiantes que consideraron útil la virtualidad en su proceso de aprendizaje.} \\
+A_6 &: \text{Número total de estudiantes que consideraron útil la virtualidad en su proceso de aprendizaje.}
 \end{aligned}
 $$
 
@@ -209,13 +210,13 @@ Para la realización de la encuesta, se utilizó un formulario de Google Docs, e
 
 Como se mencionó anteriormente, la población fue estratificada por el grado en curso de cada estudiante, con lo que se tiene un total de 3 estratos, siendo noveno el primer estrato, décimo el segundo y undécimo el tercero. 
 
-Sean $I = \lbrace 1,3,6\rbrace$, $J = \lbrace 2,4\rbrace$ y $H = \lbrace 1, 2,3\rbrace$, de ahora en adelante se asumirá $\ i \in I, \ j \in J, h \in H$ para aliviar la notación, entonces:
+Sean $I = \lbrace 1,3,6\rbrace$, $J = \lbrace 2,4\rbrace$ y $\mathcal{H} = \lbrace 1, 2,3\rbrace$, de ahora en adelante se asumirá $\ i \in I, \ j \in J, h \in \mathcal{H}$ para aliviar la notación, entonces:
 
 $$
 \begin{aligned}
 H&: \text{Número de estratos en la población.} \\
 N_h&: \text{Número total de estudiantes en el }h-\text{ésimo estrato.} \\
-N&: \text{Número total de estudiantes en los grados noveno, décimo o} \\ &\text{undécimo, claramente }  {\scriptsize N = \sum_{h=1}^{3} N_h} \\
+N&: \text{Número total de estudiantes en los grados noveno, décimo y} \\ &\hspace{0.3cm}\text{undécimo, claramente }  {\scriptsize N = \sum_{h=1}^{3} N_h.} \\
 W_h &: \text{Proporción de la población que pertence al } h-\text{ésimo estrato.} \\
 n_h&: \text{Número de estudiantes muestreados en el } h-\text{ésimo estrato.} \\
 p_i^{(h)}&: i-\text{ésima proporción muestral en el } h-\text{ésimo estrato.} \\
@@ -278,7 +279,7 @@ estimaciones para las varianzas.
 
 ```{r pilotvariances, echo=F}
 variancespilot <- read.csv("PilotSampleVariances.csv")
-rownames(variancespilot) <- (grades <- c("Noveno", "Décimo", "Undecimo"))
+rownames(variancespilot) <- (grades <- c("Noveno", "Décimo", "Undécimo"))
 kable(variancespilot, col.names = cols.questions, row.names = T,
       align = "c", longtable = T, format = "latex", booktab = T,
       caption = "Estimación de las varianzas muestrales en la muestra piloto") %>%
@@ -294,7 +295,7 @@ proporcionada por la variabilidad estimada. Esta estimación fue realizada emple
 siguiente expresión.
 
 \begin{equation}
-w_h = \frac{\frac{N_h \sigma_h}{\sqrt{C_h}}}{\sum_{h = 1}^{3} \frac{N_h \sigma_h}{\sqrt{C_h}}}
+w_h = \frac{N_h \sigma_h}{\sum_{h = 1}^{3} N_h \sigma_h}
 \end{equation}
 
 Dicho proceso del cómputo de las afijaciones desembocó en el siguiente resultado.
@@ -366,7 +367,7 @@ samplesstratasizes %>%
 
 \subsubsection{Dificultades en la estimación del tamaño de muestra}
 En general el proceso no se tornó difícil, pues en su mayoría los individuos de la
-muestra piloto rellenaron de manera adecuada la encuesta según fue solicitada.
+muestra piloto rellenaron de manera adecuada la encuesta según fue solicitado.
 Sin embargo, fue algo extenuante contactar con los individuos seleccionados en
 dicha muestra, además, se tuvo el percance menor de la depuración de datos que
 no concordaban con el formato requerido y solicitado.
@@ -375,7 +376,7 @@ no concordaban con el formato requerido y solicitado.
 
 Llegados a este punto y teniendo en cuenta los desarrollos anteriores,
 se puede proceder con las correspondientes estimaciones para los parámetros de interés con sus respectivos límites para el error de estimación y
-los límites del intervalo de confianza de aproximadamente el 95% de confianza.
+los límites del intervalo de confianza del 95%.
 
 Cabe resaltar el uso de las siguientes expresiones para el cálculo de la
 estimación de los parámetros de interés y de otros como totales asociados
@@ -387,7 +388,7 @@ Para la estimación de la media global:
 \hat{\mu}_j = \sum_{h} W_h \overline{\rm y}_{j}^{(h)}
 \end{equation}
 
-cuya varianza está dada por $\widehat{VAR}(\hat{\mu}_j) = \sum_{h} W_{h}^{2} \widehat{VAR}(\overline{\rm y}_{j}^{(h)})$, donde  
+cuya varianza estimada está dada por $\widehat{VAR}(\hat{\mu}_j) = \sum_{h} W_{h}^{2} \widehat{VAR}(\overline{\rm y}_{j}^{(h)})$, donde  
 $$\widehat{VAR}(\overline{\rm y}_{j}^{(h)}) = \left(1 - \frac{n_h}{N_h}\right)\frac{S_{j}^{2(h)}}{n_h}$$.
 
 Para la estimación de la proporción global:
@@ -396,7 +397,15 @@ Para la estimación de la proporción global:
 p_i = \sum_{h} W_h p_{i}^{(h)}
 \end{equation}
 
-cuya varianza está dada por $\widehat{VAR}(p_i) = \sum_{h} W_{h}^{2} \widehat{VAR}(p_{i}^{(h)})$, donde $$\widehat{VAR}(p_{i}^{(h)}) = \left(1 - \frac{n_h}{N_h}\right)\frac{p_{i}^{(h)} q_{i}^{(h)}}{n_h - 1}$$.
+cuya varianza estimada está dada por $\widehat{VAR}(p_i) = \sum_{h} W_{h}^{2} \widehat{VAR}(p_{i}^{(h)})$, donde $$\widehat{VAR}(p_{i}^{(h)}) = \left(1 - \frac{n_h}{N_h}\right)\frac{p_{i}^{(h)} q_{i}^{(h)}}{n_h - 1}$$.
+
+Para la estimación del total global:
+
+\begin{equation}
+\hat{A}_i = N \cdot p_i
+\end{equation} 
+
+cuya varianza estimada está dada por $\widehat{VAR}(\hat{A}_i) = N^2 \cdot \widehat{VAR}(p_i)$
 
 ```{r estimations, echo=F}
 datoscomp <- read.csv("FixedFullDataBase.csv") #leyendo datos
@@ -588,7 +597,7 @@ result2 %>% round(4) %>%
 
 \subsubsection{Proporción de estudiantes que realizan alguna actividad extracurricular}
 
-Luego de haber estimado la proporción global de estudiantes pertenecientes
+Luego de haber estimado dicha proporción global de estudiantes pertenecientes
 a los tres cursos superiores de la institución se obtuvo el resultado
 que se enseña inmediatamente abajo.
 
@@ -621,7 +630,7 @@ result3A %>% round %>%
 \subsubsection{Tiempo promedio semanal invertido en lectura de material distinto al relacionado con actividades académicas}
 
 Respecto al tiempo promedio semanal que los estudiantes de los grados noveno, 
-décimo y undécimo invierten en lecturas extra académica, se obtuvo el resultado 
+décimo y undécimo invierten en lecturas extra académicas, se obtuvo el resultado 
 que se enseña a continuación.
 
 ```{r preg4res, echo = F}
@@ -747,7 +756,54 @@ add_header_above(c(" "=1, "Noveno" = 3, "Décimo" = 3, "Undécimo" = 3, "Global"
 kable_styling(latex_options = c("striped", "hold_position"))
 ```
 
-\section{Conclusiones y recomendaciones} #Todos cuando el resto esté listo
+\textbf{Observaciones:} Est. hace referencia a la estimación puntual, LI hace referencia al
+límite inferior del intervalo de confianza y LS hace referencia al límite superior del
+intervalo de confianza.
+
+\newpage
+
+\section{Conclusiones y recomendaciones}
+
+\begin{itemize}
+\item En primer lugar se observó que existen opiniones
+bastante divididas respecto a la satisfacción que los
+estudiantes poseen en cuanto a la implementación del 
+modelo de alternancia, puesto que se estima que la proporción 
+de los mismos que se encuentra satisfecha con este es bastante
+cercana al 50\%.
+
+\item Con respecto al promedio semanal de estudio 
+independiente se estima un promedio de 0.55 horas por asignatura (dado que cursan 15 asignaturas), lo cual resulta bajo dada una intensidad horaria
+de al menos dos horas de clase por semana para cada asignatura.
+\item Respecto al tópico de la proporción de estudiantes que
+realizan actividades extracurriculares, se estima que alrededor de la mitad de estudiantes son partícipes de esta 
+clase de actividades, lo cual resulta extraño para tan poco 
+tiempo dedicado al estudio independiente de sus asignaturas.
+\item En relación al promedio semanal de lectura de material
+no académico se tiene que los estudiantes dedican menos
+tiempo a esta actividad que a estudiar de manera independiente
+(teniendo en cuenta que le dedican poco tiempo al estudio
+independiente).
+\item Al contrario de lo sucedido con las otras dos
+proporciones, la fracción de estudiantes que considera útil
+el modelo de educación virtual en su proceso de aprendizaje
+es significativamente menor que la proporción que de 
+estudiantes que se siente satisfecha con la implementación
+del modelo de alternancia.
+\item Cabe resaltar que el grado noveno es significativamente
+diferente en cuanto a la proporción de estudiantes satisfechos
+con la implementación del modelo de alternancia y a la
+proporción de estudiantes que consideraron útil la virtualidad
+en su proceso de aprendizaje.
+\item Finalmente se recomienda en caso de seguir con la línea
+de investigación, indagar en aspectos relacionados con la proporción de 
+estudiantes satisfechos con la implementación del modelo de 
+alternancia y con la proporción de estudiantes que consideraron 
+útil la virtualidad en su proceso de aprendizaje, puesto
+que estas dan indicio de que la institución puede
+mejorar en cuanto a la implementación de la primera y 
+el modo en que se imparten las clases de manera virtual.
+\end{itemize}
 
 \section{Anexos}
 
@@ -758,9 +814,9 @@ generación de números aleatorios.
 
 ```{r tablanotround, echo = F}
 param <- c("$P_{1}^{(1)}$", "$P_{1}^{(2)}$", "$P_{1}^{(3)}$",
-           "$\\mu_{2}^{(1)}$",  "$\\mu_{2}^{(3)}$",  "$\\mu_{2}^{(3)}$",
+           "$\\mu_{2}^{(1)}$",  "$\\mu_{2}^{(2)}$",  "$\\mu_{2}^{(3)}$",
            "$P_{3}^{(1)}$", "$P_{3}^{(2)}$", "$P_{3}^{(3)}$",
-           "$\\mu_{4}^{(1)}$",  "$\\mu_{4}^{(3)}$",  "$\\mu_{4}^{(3)}$",
+           "$\\mu_{4}^{(1)}$",  "$\\mu_{4}^{(2)}$",  "$\\mu_{4}^{(3)}$",
            "$P_{6}^{(1)}$", "$P_{6}^{(2)}$", "$P_{6}^{(3)}$",
            "$P_1$", "$\\mu_2$", "$P_3$", "$\\mu_4$","$P_6$"
            )
