@@ -740,9 +740,6 @@ add_header_above(c(" "=1, "Noveno" = 3, "Décimo" = 3, "Undécimo" = 3, "Global"
 kable_styling(latex_options = c("striped", "hold_position"))
 ```
 
-
-
-
 \section{Conclusiones y recomendaciones} #Todos cuando el resto esté listo
 
 \section{Anexos}
@@ -751,11 +748,4 @@ En esta sección se presenta la tabla con los resultados de las estimaciones
 puntuales sin redondear, además, se presenta una lista con los números 
 correspondientes de las unidades muestrales seleccionadas a través de la 
 generación de números aleatorios.
-
-```{r tablanotround, echo = F}
-param <- c("$P_{1}^{(1)}$", "$\\mu_2$", "$P_3$", "$mu_4$", "P_6")
-results %>%
-  mutate(parametro = rep(c(), 4))
-  kable(booktab = )
-```
 
