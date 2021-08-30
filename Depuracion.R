@@ -131,17 +131,11 @@ ns <- data.frame(p1 = n.1, p2 = n.2, p3 = n.3, p4 = n.4, p6 = n.6)
 # write_csv(ns, "EstimatedSampleSizes.csv")
 
 set.seed(123)
-undecimo <- sample(1:Nh[3], 24)
+undecimo <- sample(1:Nh[3], nh[3])
 set.seed(471)
-decimo <- sample(1:Nh[2], 28)
+decimo <- sample(1:Nh[2], nh[2])
 set.seed(621)
-noveno <- sample(1:Nh[1], 47)
-dfnoveno <- data.frame(numero = noveno) %>%
-  mutate(grupo = if_else(numero <= 32, "B", "A"),
-         grupo = factor(grupo, levels = c("B", "A")),
-         numero = if_else(grupo == "B", numero, as.integer(numero %% 32)))
-novenoa <- dfnoveno[dfnoveno$grupo == "A",1]
-novenob <- dfnoveno[dfnoveno$grupo == "B",1]
+noveno <- sample(1:Nh[1], nh[1])
 
 #depuracion base completa
 full <- read.csv("Respuestascomp.csv", header = T)[-c(89, 90), ]
