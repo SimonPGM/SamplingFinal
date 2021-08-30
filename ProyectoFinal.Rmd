@@ -169,7 +169,8 @@ names(data_desc) <- c(pre2, pre4)
 kable(data_desc,
       booktabs = T,
       align = c('c', 'c'),
-      row.names = T) %>%
+      row.names = T,
+      caption="Estadísticos descriptivos") %>%
       kable_styling(latex_options = c("HOLD_position")) %>%
       column_spec(2:3, width="7cm")
 ```
@@ -179,7 +180,8 @@ tabla_des_1 <- with(bd_desc_pro, table(Pregunta, Respuesta))
 kable(round(prop.table(tabla_des_1, margin = 1), 3),
       booktabs = T,
       row.names = T,
-      col.names = c("% Sí", "% No")) %>%
+      col.names = c("% Sí", "% No"),
+      caption = "Proporciones por categoría de las preguntas uno, tres y seis") %>%
       kable_styling(latex_options = c("HOLD_position"))
 
 ```
@@ -244,7 +246,8 @@ pilotsampledf <- data.frame(N = 6, D = 7, O = 7) #ns para la muestra piloto
 rownames(pilotsampledf) <- "Número de individuos"
 pilotsampledf %>%
              kable(row.names = T, col.names = c("Noveno", "Décimo", "Undécimo"),
-                   align = "c", longtable = T, format = "latex", booktab = T) %>%
+                   align = "c", longtable = T, format = "latex", booktab = T,
+                   caption = "Distribución de la muestra piloto en los estratos") %>%
   kable_styling(position = "center")
 ```
 
@@ -258,7 +261,8 @@ set.seed(11)
 toshowsurvey <- sample(1:20, 7) 
 surveypilot[toshowsurvey, -c(1,6)] %>%
   kable(col.names = cols.questions,
-        align = "c", longtable = T, format = "latex", booktab = T) %>%
+        align = "c", longtable = T, format = "latex", booktab = T,
+        caption = "Previsualización de los datos de la muestra piloto") %>%
   kable_styling(position = "center", full_width = F,
                 latex_options = c("hold_position", "repeat_header"))
 ```
@@ -276,7 +280,8 @@ estimaciones para las varianzas.
 variancespilot <- read.csv("PilotSampleVariances.csv")
 rownames(variancespilot) <- (grades <- c("Noveno", "Décimo", "Undecimo"))
 kable(variancespilot, col.names = cols.questions, row.names = T,
-      align = "c", longtable = T, format = "latex", booktab = T) %>%
+      align = "c", longtable = T, format = "latex", booktab = T,
+      caption = "Estimación de las varianzas muestrales en la muestra piloto") %>%
   kable_styling(position = "center")
 ```
 Posteriormente, una vez calculadas las varianzas, se prosiguió a determinar las
@@ -299,7 +304,8 @@ whs <- read.csv("ProportionsofStrata.csv")
 rownames(whs) <- grades
 whs %>%
   kable(col.names = cols.questions, row.names = T,
-        align = "c", longtable = T, format = "latex", booktab = T) %>%
+        align = "c", longtable = T, format = "latex", booktab = T,
+        caption = "Cómputo de las afijaciones para los datos obtenidos en la muestra piloto") %>%
   kable_styling(position = "center")
 ```
 Dado que la estimación del tamaño de muestra representa una cota inferior
@@ -324,7 +330,8 @@ rownames(samplesizes) <- "Tamaños de muestra estimados"
 
 samplesizes %>%
   kable(col.names = cols.questions, row.names = T,
-        align = "c", longtable = T, format = "latex", booktab = T) %>%
+        align = "c", longtable = T, format = "latex", booktab = T,
+        caption = "Tamaños de muestra calculados") %>%
   kable_styling(position = "center") %>%
   column_spec(1, width = "4cm") %>%
   row_spec(1, align = "c")
@@ -349,7 +356,8 @@ samplesstratasizes %>%
   kable("latex", booktabs = T, align = "c", row.names = T, longtable = T,
         col.names = c("Tamaño del estrato",
                       "Cantidad de individuos a\nmuestrear en el estrato",
-                      "Porcentaje de individuos a muestrear en el estrato")) %>%
+                      "Porcentaje de individuos a muestrear en el estrato"),
+        caption = "Distribución definitiva de la muestra en los estratos") %>%
   kable_styling(position = "center", full_width = F) %>%
   column_spec(2, width = "1.5cm") %>%
   column_spec(3, width = "3cm") %>%
@@ -702,6 +710,7 @@ ggplot(bd, aes(x = 1, y = est)) +
 
 ```
 
+\newpage
 
 ```{r results-table1, echo=FALSE}
 
@@ -731,7 +740,7 @@ kable(bd_wider[,1:13],
                     "LI",
                     "LS"
                     ),
-      align=rep('c', 13)) %>%
+      align=rep('c', 13), longtable = T) %>%
 column_spec(1, width = "3cm") %>%
 add_header_above(c(" "=1, "Noveno" = 3, "Décimo" = 3, "Undécimo" = 3, "Global" = 3))  %>%
 kable_styling(latex_options = c("striped", "hold_position"))
