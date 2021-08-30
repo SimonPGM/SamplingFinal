@@ -242,6 +242,8 @@ se seleccionó una muestra piloto con individuos de cada estrato, esto
 con el fin de realizar estimaciones de la varianza. Dicha muestra piloto
 se distribuyó de la siguiente manera.
 
+\newpage
+
 ```{r pilotsampleshow, echo = F}
 pilotsampledf <- data.frame(N = 6, D = 7, O = 7) #ns para la muestra piloto
 rownames(pilotsampledf) <- "Número de individuos"
@@ -563,11 +565,15 @@ result1 %>% round(4) %>%
   kable_styling(position = "center")
 ```
 
+Así, una estimación para $P_1$ es 0.5296 con un límite de error estimado de 0.0497 y su respectivo intervalo con una confianza del 95% dado por (0.4799 , 0.5792).
+
 \subsubsection{Total de estudiantes que se sienten satisfechos con el modelo de alternancia implementado en el colegio}
 
 Dado que se estimo la proporción de estudiantes que se sienten satisfechos con el 
 modelo de alternancia implementado en el colegio, estimar el 
 total resulta una tarea sencilla y por esto se presenta.
+
+\newpage
 
 ```{r preg1resA, echo = F}
 rownames(result1A) <- "Resultados"
@@ -578,6 +584,8 @@ result1A %>% round %>%
         caption = "Total de estudiantes satisfechos  con el modelo de alternancia") %>%
   kable_styling(position = "center")
 ```
+
+Por lo tanto, se estima que el número total de estudiantes de los últimos años de la institución, satisfechos con el modelo de alternancia es de 54 estudiantes, con un límite de error de estimación estimado de 5 estudiantes y con una confianza del 95%, $A_1 \in (49 , 59)$
 
 \subsubsection{Tiempo promedio semanal invertido en estudio de contenido de las asignaturas del colegio}
 
@@ -595,6 +603,8 @@ result2 %>% round(4) %>%
   kable_styling(position = "center")
 ```
 
+Así pues, con un límite de error de estimación dado por $B=0.8878$, se tiene que el tiempo promedio semanal estimado que los estudiantes invierten en estudiar independientemente, está dado por $\hat{\mu}_2=8.3243$, y con un 95% de confianza $\mu_2 \in (7.4365,9.212)$
+
 \subsubsection{Proporción de estudiantes que realizan alguna actividad extracurricular}
 
 Luego de haber estimado dicha proporción global de estudiantes pertenecientes
@@ -610,6 +620,8 @@ result3 %>% round(4) %>%
         caption = "Propoción de estudiantes que realizan actividades extracurriculares") %>%
   kable_styling(position = "center")
 ```
+
+Por consiguiente, con una confianza del 95% y un límite de error estimado de 5% $p_3 = 0.5193$ donde su respectivo intervalo de confianza está dado por (0.4693, 0.5693)
 
 \subsubsection{Total de estudiantes que realizan alguna actividad extracurricular}
 
@@ -627,6 +639,8 @@ result3A %>% round %>%
   kable_styling(position = "center")
 ```
 
+Por lo tanto, se estima que el número total de estudiantes que realizan actividades extracurriculares es de 53 individuos, esto con un límite de error de estimación estimado de 5 estudiantes y con una confianza del 95% $A_3 \in (48 , 58)$
+
 \subsubsection{Tiempo promedio semanal invertido en lectura de material distinto al relacionado con actividades académicas}
 
 Respecto al tiempo promedio semanal que los estudiantes de los grados noveno, 
@@ -643,11 +657,15 @@ result4 %>% round(4) %>%
   kable_styling(position = "center")
 ```
 
+De esta manera, con un límite de error de estimación dado por $B=0.6251$ se tiene que el tiempo promedio semanal estimado que los estudiantes invierten en leer de manera proactiva, está dado por $\hat{\mu}_4=4.2943$, y con un 95% de confianza $\mu_4 \in (3.6692,4.9193)$
+
 \subsubsection{Proporción de estudiantes que consideran útil el modelo de educación virtual en su proceso de aprendizaje}
 
 Finalmente, para la proporción de aquellos alumnos que consideran útil
 el modelo virtual en su proceso de aprendizaje se cuenta con el siguiente
 resultado para las estimaciones.
+
+\newpage
 
 ```{r preg6res, echo = F}
 rownames(result6) <- "Resultados"
@@ -659,6 +677,7 @@ result6 %>% round(4) %>%
   kable_styling(position = "center")
 ```
 
+De allí, con una confianza del 95% y un límite de error estimación de 4.54%, $p_6 = 0.3677$ donde su respectivo intervalo de confianza está dado por (0.3224, 0.4131)
 
 \subsubsection{Total de estudiantes que consideran útil el modelo de educación virtual en su proceso de aprendizaje}
 
@@ -674,6 +693,8 @@ result6A %>% round %>%
         caption = "Total de estudiantes que consideran útil el modelo de alternancia") %>%
   kable_styling(position = "center")
 ```
+
+En otras palabras, se estima que el número total de estudiantes que consideran útil el modelo de alternancia es de 38, con un límite de error de estimación estimado de 5 estudiantes y con una confianza del 95%, $A_6 \in (33 , 42)$
 
 \section{Presentación de resultados}
 
