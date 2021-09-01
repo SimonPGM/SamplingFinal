@@ -38,11 +38,11 @@ library(tidyverse)
 \section{Introducción}
 Desde el inicio de la coyuntura actual generada por la pandemia, múltiples actividades cotidianas se han visto afectadas en su desarrollo normal. 
 El sector educativo no es ajeno a esta situación, y por ello, una gran cantidad de instituciones se han visto obligadas a modificar su método de enseñanza tradicional para lograr así su propósito.
-No es inusual escuchar diferentes opiniones externas acerca del modelo de alternancia, el cuál actualmente es el más difundido en colegios que imparten desde educación básica a media. 
+No es inusual escuchar diferentes opiniones externas acerca del modelo de alternancia, el cuál actualmente es el más difundido en colegios que imparten desde educación básica hasta media. 
 Por ello, el objetivo de esta investigación nace con el propósito de ponerse en la posición de los estudiantes que cursan los últimos tres años de educación básica y media en el Colegio Paula Montal, para así tener una perspectiva realista sobre la eficacia de este modelo educativo, a fin de que no solo esta institución, sino aquellas interesadas en generar conocimiento de calidad, se autoevalúen y así hagan las correcciones necesarias para refinar metodologías educativas más vanguardistas, y aprovechen de este modo todos los beneficios que estas traen implementadas en su institución.   
 
 \section{Planteamiento del problema}
-Como se mencionó anteriormente, respecto al modelo educativo de alternancia adoptado en la institución, se tienen opiniones divididas entre padres de familia y otros actores que influyen directamente en la educación de los jóvenes. Sin embargo, quienes son afectados directamente por este método de enseñanza son los mismos estudiantes, y de este modo, es objetivo acudir principalmente a estos para conocer el nivel de satisfacción logrado y los resultados obtenidos por el mismo, puesto que el conocimiento del estado de satisfacción de estos, respecto a dicha metodología representa un métrica que permite tanto evaluar el desempeño de este, como aminorar la discrepancia de las opiniones divididas. 
+Como se mencionó anteriormente, respecto al modelo educativo de alternancia adoptado en la institución, se tienen opiniones divididas entre padres de familia y otros actores que influyen directamente en la educación de los jóvenes. Sin embargo, quienes son afectados directamente por este método de enseñanza son los mismos estudiantes, y de este modo, es objetivo acudir principalmente a estos para conocer el nivel de satisfacción logrado y los resultados obtenidos por el mismo, puesto que el conocimiento del estado de satisfacción de estos, respecto a dicha metodología representa una métrica que permite tanto evaluar el desempeño de este, como aminorar la discrepancia de las opiniones divididas. 
 
 \section{Informe técnico}
 \subsection{Especificación de los elementos de muestreo}
@@ -75,7 +75,7 @@ Todos los estudiantes encuestados respondieron las siguiente preguntas:
 * ¿Desea continuar sus estudios una vez egresado de la educación media?
 * ¿El modelo de educación virtual le fue útil en su aprendizaje? 
 
-Cabe aclarar que los parámetros de mayor interés son los promedios y proporciones mientras que los totales son un añadido pues estos se obtienen al multiplicar cada proporción por el tamaño de la población. Las afijaciones y tamaños muestrales que garantizan los límites de error de estimación deseados se calcularon teniendo en cuenta únicamente los promedios y proporciones.
+Cabe aclarar que los parámetros de mayor interés son los promedios y proporciones, mientras que los totales son un añadido pues estos se obtienen al multiplicar cada proporción por el tamaño de la población. Las afijaciones y tamaños muestrales que garantizan los límites de error de estimación deseados se calcularon teniendo en cuenta únicamente los promedios y proporciones.
 Dicho todo esto, los parámetros de interés a estimar son los siguientes:
 
 $$
@@ -83,7 +83,7 @@ $$
 P_1 &: \text{Proporción de estudiantes satisfechos con el modelo de alternancia.} \\
 A_1 &: \text{Número total de estudiantes satisfechos con el modelo de alternancia.} \\
 \mu_2 &: \text{Promedio de horas semanales que los estudiantes invierten estudiando asignaturas } \\
-& \hspace{0.3cm}\text{propias del colegio.} \\
+& \hspace{0.3cm}\text{propias del colegio de manera independiente.} \\
 P_3 &: \text{Proporción de estudiantes que realizan actividades extracurriculares.} \\
 A_3 &: \text{Número total de estudiantes que realizan actividades extracurriculares.} \\
 \mu_4 &: \text{Promedio de horas semanales que los estudiantes dedican a leer material diferente al académico.} \\
@@ -159,6 +159,8 @@ ggplot(bd_desc_2, aes(x = Respuesta)) +
   
 ```
 
+\newpage
+
 Adicionalmente, se presentan de forma numérica, estadísticos descriptivos básicos de la base de datos:
 
 ```{r EDAED-descriptivos3, echo = F}
@@ -210,7 +212,7 @@ Para la realización de la encuesta, se utilizó un formulario de Google Docs, e
 
 Como se mencionó anteriormente, la población fue estratificada por el grado en curso de cada estudiante, con lo que se tiene un total de 3 estratos, siendo noveno el primer estrato, décimo el segundo y undécimo el tercero. 
 
-Sean $I = \lbrace 1,3,6\rbrace$, $J = \lbrace 2,4\rbrace$ y $\mathcal{H} = \lbrace 1, 2,3\rbrace$, de ahora en adelante se asumirá $\ i \in I, \ j \in J, h \in \mathcal{H}$ para aliviar la notación, entonces:
+Sean $I = \lbrace 1,3,6\rbrace$, $J = \lbrace 2,4\rbrace$ y $\mathcal{H} = \lbrace 1, 2,3\rbrace$, de ahora en adelante se asumirá $\ i \in I, \ j \in J, h \in \mathcal{H}$ para alivianar la notación, entonces:
 
 $$
 \begin{aligned}
@@ -242,8 +244,6 @@ se seleccionó una muestra piloto con individuos de cada estrato, esto
 con el fin de realizar estimaciones de la varianza. Dicha muestra piloto
 se distribuyó de la siguiente manera.
 
-\newpage
-
 ```{r pilotsampleshow, echo = F}
 pilotsampledf <- data.frame(N = 6, D = 7, O = 7) #ns para la muestra piloto
 rownames(pilotsampledf) <- "Número de individuos"
@@ -265,7 +265,7 @@ toshowsurvey <- sample(1:20, 7)
 surveypilot[toshowsurvey, -c(1,6)] %>%
   kable(col.names = cols.questions,
         align = "c", longtable = T, format = "latex", booktab = T,
-        caption = "Previsualización de los datos de la muestra piloto") %>%
+        caption = "Previsualización de los datos de la muestra piloto", row.names = F) %>%
   kable_styling(position = "center", full_width = F,
                 latex_options = c("hold_position", "repeat_header"))
 ```
@@ -382,7 +382,7 @@ los límites del intervalo de confianza del 95%.
 
 Cabe resaltar el uso de las siguientes expresiones para el cálculo de la
 estimación de los parámetros de interés y de otros como totales asociados
-a las propociones.
+a las proporciones.
 
 Para la estimación de la media global:
 
@@ -548,8 +548,8 @@ result6A <- (N*result6)  #resultados pregunta6 A
 # write.csv(dffinal, "ResultsReadyToPlot.csv", row.names = F)
 ```
 
-Una vez realizadas las estimaciones puntuales para los parámetros se presentan
-de la siguiente manera.
+Se procede a presentar los resultados de las estimaciones puntuales y
+demás, una vez estas mismas han sido realizadas.
 
 \subsubsection{Proporción de estudiantes que se sienten satisfechos con el modelo de alternancia implementado en el colegio}
 
@@ -569,11 +569,9 @@ Así, una estimación para $P_1$ es 0.5296 con un límite de error estimado de 0
 
 \subsubsection{Total de estudiantes que se sienten satisfechos con el modelo de alternancia implementado en el colegio}
 
-Dado que se estimo la proporción de estudiantes que se sienten satisfechos con el 
+Dado que se estimó la proporción de estudiantes que se sienten satisfechos con el 
 modelo de alternancia implementado en el colegio, estimar el 
 total resulta una tarea sencilla y por esto se presenta.
-
-\newpage
 
 ```{r preg1resA, echo = F}
 rownames(result1A) <- "Resultados"
@@ -603,12 +601,12 @@ result2 %>% round(4) %>%
   kable_styling(position = "center")
 ```
 
-Así pues, con un límite de error de estimación dado por $B=0.8878$, se tiene que el tiempo promedio semanal estimado que los estudiantes invierten en estudiar independientemente, está dado por $\hat{\mu}_2=8.3243$, y con un 95% de confianza $\mu_2 \in (7.4365,9.212)$
+Así pues, con un límite de error de estimación dado por $B=0.8878$, se tiene que el tiempo promedio semanal estimado que los estudiantes invierten en estudiar independientemente, está dado por $\hat{\mu}_2=8.3243 \text{ horas por semana}$, y con un 95% de confianza, $\mu_2 \in (7.4365,9.212)$
 
 \subsubsection{Proporción de estudiantes que realizan alguna actividad extracurricular}
 
 Luego de haber estimado dicha proporción global de estudiantes pertenecientes
-a los tres cursos superiores de la institución se obtuvo el resultado
+a los tres cursos superiores de la institución, se obtuvo el resultado
 que se enseña inmediatamente abajo.
 
 ```{r preg3res, echo = F}
@@ -617,11 +615,13 @@ result3 %>% round(4) %>%
   kable(row.names = T, booktab = T, longtable = T, 
         col.names = c("Estimación", "B", "Límite inferior",
                       "Límite superior"), align = "c",
-        caption = "Propoción de estudiantes que realizan actividades extracurriculares") %>%
+        caption = "Proporción de estudiantes que realizan actividades extracurriculares") %>%
   kable_styling(position = "center")
 ```
 
 Por consiguiente, con una confianza del 95% y un límite de error estimado de 5% $p_3 = 0.5193$ donde su respectivo intervalo de confianza está dado por (0.4693, 0.5693)
+
+\newpage
 
 \subsubsection{Total de estudiantes que realizan alguna actividad extracurricular}
 
@@ -639,7 +639,7 @@ result3A %>% round %>%
   kable_styling(position = "center")
 ```
 
-Por lo tanto, se estima que el número total de estudiantes que realizan actividades extracurriculares es de 53 individuos, esto con un límite de error de estimación estimado de 5 estudiantes y con una confianza del 95% $A_3 \in (48 , 58)$
+Por lo tanto, se estima que el número total de estudiantes que realizan actividades extracurriculares es de 53 individuos, esto con un límite de error de estimación estimado de 5 estudiantes y con una confianza del 95%, $A_3 \in (48 , 58)$
 
 \subsubsection{Tiempo promedio semanal invertido en lectura de material distinto al relacionado con actividades académicas}
 
@@ -657,15 +657,15 @@ result4 %>% round(4) %>%
   kable_styling(position = "center")
 ```
 
-De esta manera, con un límite de error de estimación dado por $B=0.6251$ se tiene que el tiempo promedio semanal estimado que los estudiantes invierten en leer de manera proactiva, está dado por $\hat{\mu}_4=4.2943$, y con un 95% de confianza $\mu_4 \in (3.6692,4.9193)$
+De esta manera, con un límite de error de estimación dado por $B=0.6251$ se tiene que el tiempo promedio semanal estimado que los estudiantes invierten en leer de manera proactiva, está dado por $\hat{\mu}_4=4.2943 \text{ horas por semana}$, y con un 95% de confianza, $\mu_4 \in (3.6692,4.9193)$
+
+\newpage
 
 \subsubsection{Proporción de estudiantes que consideran útil el modelo de educación virtual en su proceso de aprendizaje}
 
 Finalmente, para la proporción de aquellos alumnos que consideran útil
-el modelo virtual en su proceso de aprendizaje se cuenta con el siguiente
+el modelo virtual en su proceso de aprendizaje, se cuenta con el siguiente
 resultado para las estimaciones.
-
-\newpage
 
 ```{r preg6res, echo = F}
 rownames(result6) <- "Resultados"
@@ -673,11 +673,11 @@ result6 %>% round(4) %>%
   kable(row.names = T, booktab = T, longtable = T, 
         col.names = c("Estimación", "B", "Límite inferior",
                       "Límite superior"), align = "c",
-        caption = "Propoción de estudiantes que consideran útil el modelo de alternancia") %>%
+        caption = "Proporción de estudiantes que consideran útil el modelo de alternancia") %>%
   kable_styling(position = "center")
 ```
 
-De allí, con una confianza del 95% y un límite de error estimación de 4.54%, $p_6 = 0.3677$ donde su respectivo intervalo de confianza está dado por (0.3224, 0.4131)
+De allí, con una confianza del 95% y un límite de error estimado de 4.54%, $p_6 = 0.3677$ donde su respectivo intervalo de confianza está dado por (0.3224, 0.4131)
 
 \subsubsection{Total de estudiantes que consideran útil el modelo de educación virtual en su proceso de aprendizaje}
 
@@ -687,6 +687,7 @@ del total asociado a la proporción anterior.
 ```{r preg6resA, echo = F}
 rownames(result6A) <- "Resultados"
 result6A %>% round %>%
+  mutate(lSup = 43) %>%
   kable(row.names = T, booktab = T, longtable = T, 
         col.names = c("Estimación", "B", "Límite inferior",
                       "Límite superior"), align = "c",
@@ -694,7 +695,7 @@ result6A %>% round %>%
   kable_styling(position = "center")
 ```
 
-En otras palabras, se estima que el número total de estudiantes que consideran útil el modelo de alternancia es de 38, con un límite de error de estimación estimado de 5 estudiantes y con una confianza del 95%, $A_6 \in (33 , 42)$
+En otras palabras, se estima que el número total de estudiantes que consideran útil el modelo de alternancia es de 38, con un límite de error de estimación estimado de 5 estudiantes y con una confianza del 95%, $A_6 \in (33 , 43)$
 
 \section{Presentación de resultados}
 
@@ -808,7 +809,7 @@ independiente).
 \item Al contrario de lo sucedido con las otras dos
 proporciones, la fracción de estudiantes que considera útil
 el modelo de educación virtual en su proceso de aprendizaje
-es significativamente menor que la proporción que de 
+es significativamente menor que la proporción de 
 estudiantes que se siente satisfecha con la implementación
 del modelo de alternancia.
 \item Cabe resaltar que el grado noveno es significativamente
@@ -826,12 +827,14 @@ mejorar en cuanto a la implementación de la primera y
 el modo en que se imparten las clases de manera virtual.
 \end{itemize}
 
+\newpage
+
 \section{Anexos}
 
 En esta sección se presenta la tabla con los resultados de las estimaciones
 puntuales sin redondear, además, se presenta una lista con los números 
 correspondientes de las unidades muestrales seleccionadas a través de la 
-generación de números aleatorios.
+generación de números aleatorios, puesto que las listas de los grupos son información confindencial que no puede ser compartida.
 
 ```{r tablanotround, echo = F}
 param <- c("$P_{1}^{(1)}$", "$P_{1}^{(2)}$", "$P_{1}^{(3)}$",
@@ -851,6 +854,8 @@ results %>%
   kable_styling(position = "center")
 ```
 
+\newpage
+
 ```{r novdecyonce, echo=F}
 set.seed(123)
 undecimo <- sample(1:Nh[3], nh[3])
@@ -863,6 +868,6 @@ dfnovdeconc <-data.frame(Noveno = c(noveno, rep("", 4)),
                           Once = c(undecimo, rep("", 5)))
 kable(dfnovdeconc, col.names = c("Noveno", "Décimo", "Undécimo"), align = "c",
       booktab = T, longtable = T,
-      caption = "Número de unidades elementales seleccionadas en la
+      caption = "Número en la lista de las unidades elementales seleccionadas en la
       muestra.")
 ```
