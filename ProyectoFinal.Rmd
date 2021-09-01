@@ -300,6 +300,8 @@ siguiente expresión.
 w_h = \frac{N_h \sigma_h}{\sum_{h = 1}^{3} N_h \sigma_h}
 \end{equation}
 
+\newpage
+
 Dicho proceso del cómputo de las afijaciones desembocó en el siguiente resultado.
 
 ```{r afijaciones, echo = F}
