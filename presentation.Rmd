@@ -1,12 +1,19 @@
 ---
-title: "PROYECTO FINAL MUESTREO ESTADÍSTICO"
+title: "PROYECTO FINAL"
+subtitle: "Muestreo Estadístico"
 author:
-  - Juan José Galeano Arenas
-  - Simón Pedro Galeano Muñoz
-  - Sebastián Gaviria Sánchez
-  - Santiago Zuluaga Ayala
-date: "1/9/2021"
-output: beamer_presentation
+  - Juan J. Galeano A.
+  - Simón P. Galeano M.
+  - Sebastián Gaviria S.
+  - Santiago Zuluaga A.
+date: "08 de septiembre de 2021"
+institute: "Universidad Nacional de Colombia - Facultad de Ciencias - Sede Medellín"
+short-title: "PROYECTO FINAL"
+output:
+  beamer_presentation:
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
 header-includes:
 - \usepackage{booktabs}
 - \usepackage{longtable}
@@ -18,7 +25,11 @@ header-includes:
 - \usepackage{pdflscape}
 - \usepackage{tabu}
 - \usepackage{threeparttable}
+- \usepackage{xcolor}
+- \AtBeginSection{}
+- \input{header_pagenrs.tex}
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
@@ -26,6 +37,8 @@ library(kableExtra)
 library(knitr)
 library(tidyverse)
 ```
+
+# Introducción
 
 ## Introducción
 
@@ -35,6 +48,8 @@ cotidianas se han visto afectadas en su desarrollo normal.
 - El sector educativo no es ajeno a esta situación, y por ello, una gran cantidad de instituciones se han visto obligadas a modificar su método de enseñanza tradicional para lograr así su propósito.
 
 - El objetivo de esta investigación nace con el propósito de ponerse en la posición de los estudiantes que cursan los últimos tres años de educación básica y media en el Colegio Paula Montal, para así tener una perspectiva realista sobre la eficacia de este modelo educativo, a fin de que no solo esta institución, sino aquellas interesadas en generar conocimiento de calidad, se autoevalúen y así hagan las correcciones necesarias para refinar metodologías educativas.
+
+# Planteamiento del problema
 
 ## Planteamiento del problema
 
@@ -79,6 +94,8 @@ los grupos se puede subdividir en los grados noveno, décimo y once, los cuales 
 - Se da una situación de heterogeneidad entre los grupos porque entre estos, sus individuos difieren en edad e inmediatez de egreso.
 
 ## Proceso de selección de la muestra
+
+\includegraphics{seleccion_muestra.png}
 
 ## Formato de la encuesta
 
@@ -135,7 +152,7 @@ bd_desc_2 <-  datoscomp2[c("Grado", "Pregunta_2", "Pregunta_4")] %>%
                                            TRUE ~ Pregunta))
 ```
 
-```{r EDAED-plots1, echo=FALSE, message=FALSE, warning=FALSE}
+```{r EDAED-plots1, echo=FALSE, message=FALSE, warning=FALSE, fig.height=6}
 ggplot(bd_desc_pro, aes(Grado, fill = Respuesta)) +
   theme_bw() +
   theme(plot.title = element_text(hjust = 0.5),
@@ -314,7 +331,7 @@ cuya varianza estimada está dada por $\widehat{VAR}(\hat{A}_i) = N^2 \cdot \wid
 results <- read.csv("ResultsReadyToPlot.csv", header = T, encoding = "UTF-8")
 ```
 
-```{r results-plot1, echo=FALSE, fig.align='center'}
+```{r results-plot1, echo=FALSE, fig.align='center', fig.height=6.5}
 # Lectura BD
 bd <- results
 
@@ -383,7 +400,7 @@ kable(bd_wider[,1:13],
                     "LS"
                     ),
       align=rep('c', 13), longtable = T) %>%
-column_spec(1, width = "2.3cm") %>%
+column_spec(1, width = "2.6cm") %>%
 column_spec(2, width = "0.3cm") %>%
 column_spec(3, width = "0.3cm") %>%
 column_spec(4, width = "0.3cm") %>%
