@@ -1,21 +1,21 @@
-"grupo","parametro","est","n","metodo","se","label_parametro","label_parametro_input"
-"Noveno","P_1",0.653846153846154,26,"t-student",0.0412005486262087,"Proporción de estudiantes satisfechos con el modelo de alternacia","Satisfacción con el modelo de alternancia"
-"Décimo","P_1",0.466666666666667,30,"t-student",0.0425066570115842,"Proporción de estudiantes satisfechos con el modelo de alternacia","Satisfacción con el modelo de alternancia"
-"Undécimo","P_1",0.48,25,"t-student",0.0476969600708473,"Proporción de estudiantes satisfechos con el modelo de alternacia","Satisfacción con el modelo de alternancia"
-"Noveno","mu_2",8.46153846153846,26,"t-student",0.872076688989732,"Promedio de horas semanales que invierte estudiando","Horas semanales invertidas estudiando"
-"Décimo","mu_2",7.03333333333333,30,"t-student",0.634359343407076,"Promedio de horas semanales que invierte estudiando","Horas semanales invertidas estudiando"
-"Undécimo","mu_2",9.72,25,"t-student",0.869784456057937,"Promedio de horas semanales que invierte estudiando","Horas semanales invertidas estudiando"
-"Noveno","P_3",0.461538461538462,26,"t-student",0.0431729698473916,"Proporción de estudiantes que realizan actividades extracurriculares","Actividades extracurriculares"
-"Décimo","P_3",0.5,30,"t-student",0.0426014322842305,"Proporción de estudiantes que realizan actividades extracurriculares","Actividades extracurriculares"
-"Undécimo","P_3",0.6,25,"t-student",0.0467707173346743,"Proporción de estudiantes que realizan actividades extracurriculares","Actividades extracurriculares"
-"Noveno","mu_4",3.38461538461538,26,"t-student",0.232970272629351,"Promedio de horas semanales dedicadas a leer material diferente al académico","Horas de lectura de material diferente al académico"
-"Décimo","mu_4",4.53333333333333,30,"t-student",0.747565788264703,"Promedio de horas semanales dedicadas a leer material diferente al académico","Horas de lectura de material diferente al académico"
-"Undécimo","mu_4",4.92,25,"t-student",0.437016399387178,"Promedio de horas semanales dedicadas a leer material diferente al académico","Horas de lectura de material diferente al académico"
-"Noveno","P_6",0.615384615384615,26,"t-student",0.0421325044234743,"Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje","Utilidad de la virtualidad"
-"Décimo","P_6",0.266666666666667,30,"t-student",0.0376781243782736,"Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje","Utilidad de la virtualidad"
-"Undécimo","P_6",0.24,25,"t-student",0.0407737660757502,"Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje","Utilidad de la virtualidad"
-"Global","P_1",0.52957264957265,81,"normal",0.0253329747851169,"Proporción de estudiantes satisfechos con el modelo de alternacia","Satisfacción con el modelo de alternancia"
-"Global","mu_2",8.3242735042735,81,"normal",0.452951190670934,"Promedio de horas semanales que invierte estudiando","Horas semanales invertidas estudiando"
-"Global","P_3",0.519306184012066,81,"normal",0.0255077780774374,"Proporción de estudiantes que realizan actividades extracurriculares","Actividades extracurriculares"
-"Global","mu_4",4.29425842131725,81,"normal",0.318910995776065,"Promedio de horas semanales dedicadas a leer material diferente al académico","Horas de lectura de material diferente al académico"
-"Global","P_6",0.367702362996481,81,"normal",0.0231383207737078,"Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje","Utilidad de la virtualidad"
+"grupo","parametro","est","n","metodo","se","label_parametro","label_parametro_input","LI","LS"
+"Noveno","P_1",0.653846153846154,26,"t-student",0.0412005486262087,"Proporción de estudiantes satisfechos con el modelo de alternacia","Satisfacción con el modelo de alternancia",0.2,0.8
+"Décimo","P_1",0.466666666666667,30,"t-student",0.0425066570115842,"Proporción de estudiantes satisfechos con el modelo de alternacia","Satisfacción con el modelo de alternancia",0.2,0.8
+"Undécimo","P_1",0.48,25,"t-student",0.0476969600708473,"Proporción de estudiantes satisfechos con el modelo de alternacia","Satisfacción con el modelo de alternancia",0.2,0.8
+"Noveno","mu_2",8.46153846153846,26,"t-student",0.872076688989732,"Promedio de horas semanales que invierte estudiando","Horas semanales invertidas estudiando",5,13
+"Décimo","mu_2",7.03333333333333,30,"t-student",0.634359343407076,"Promedio de horas semanales que invierte estudiando","Horas semanales invertidas estudiando",5,13
+"Undécimo","mu_2",9.72,25,"t-student",0.869784456057937,"Promedio de horas semanales que invierte estudiando","Horas semanales invertidas estudiando",5,13
+"Noveno","P_3",0.461538461538462,26,"t-student",0.0431729698473916,"Proporción de estudiantes que realizan actividades extracurriculares","Actividades extracurriculares",0.2,0.8
+"Décimo","P_3",0.5,30,"t-student",0.0426014322842305,"Proporción de estudiantes que realizan actividades extracurriculares","Actividades extracurriculares",0.2,0.8
+"Undécimo","P_3",0.6,25,"t-student",0.0467707173346743,"Proporción de estudiantes que realizan actividades extracurriculares","Actividades extracurriculares",0.2,0.8
+"Noveno","mu_4",3.38461538461538,26,"t-student",0.232970272629351,"Promedio de horas semanales dedicadas a leer material diferente al académico","Horas de lectura de material diferente al académico",2,7
+"Décimo","mu_4",4.53333333333333,30,"t-student",0.747565788264703,"Promedio de horas semanales dedicadas a leer material diferente al académico","Horas de lectura de material diferente al académico",2,7
+"Undécimo","mu_4",4.92,25,"t-student",0.437016399387178,"Promedio de horas semanales dedicadas a leer material diferente al académico","Horas de lectura de material diferente al académico",2,7
+"Noveno","P_6",0.615384615384615,26,"t-student",0.0421325044234743,"Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje","Utilidad de la virtualidad",0.1,0.8
+"Décimo","P_6",0.266666666666667,30,"t-student",0.0376781243782736,"Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje","Utilidad de la virtualidad",0.1,0.8
+"Undécimo","P_6",0.24,25,"t-student",0.0407737660757502,"Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje","Utilidad de la virtualidad",0.1,0.8
+"Global","P_1",0.52957264957265,81,"normal",0.0253329747851169,"Proporción de estudiantes satisfechos con el modelo de alternacia","Satisfacción con el modelo de alternancia",0.2,0.8
+"Global","mu_2",8.3242735042735,81,"normal",0.452951190670934,"Promedio de horas semanales que invierte estudiando","Horas semanales invertidas estudiando",5,13
+"Global","P_3",0.519306184012066,81,"normal",0.0255077780774374,"Proporción de estudiantes que realizan actividades extracurriculares","Actividades extracurriculares",0.2,0.8
+"Global","mu_4",4.29425842131725,81,"normal",0.318910995776065,"Promedio de horas semanales dedicadas a leer material diferente al académico","Horas de lectura de material diferente al académico",2,7
+"Global","P_6",0.367702362996481,81,"normal",0.0231383207737078,"Proporción de estudiantes que consideró útil la virtualidad en su proceso de aprendizaje","Utilidad de la virtualidad",0.1,0.8

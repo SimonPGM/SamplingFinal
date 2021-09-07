@@ -70,6 +70,7 @@ server <- function(input, output) {
       geom_point(size = 5, colour = "red") +
       guides(x = "none") +
       scale_x_continuous(limits = c(0, 2), breaks = NULL) +
+      scale_y_continuous(limits = c(as.numeric(tabla_filtrada()["LI"]), as.numeric(tabla_filtrada()["LS"]))) +
       labs(title = tabla_filtrada()["label_parametro"], 
            y = "Estimación e intervalo de confianza", 
            x = input$grado)

@@ -47,9 +47,22 @@ res_finales <- res_finales %>%
                                                          parametro == "P_3" ~ level3_inp,
                                                          parametro == "mu_4" ~  level4_inp,
                                                          parametro == "P_6" ~ level6_inp,
-                                                         TRUE ~  parametro))
+                                                         TRUE ~  parametro),
+                       LI = case_when(parametro == "P_1" ~ 0.20,
+                                      parametro == "mu_2" ~ 5,
+                                      parametro == "P_3" ~ 0.20,
+                                      parametro == "mu_4" ~  2,
+                                      parametro == "P_6" ~ 0.10,
+                                      TRUE ~  1000),
+                       LS = case_when(parametro == "P_1" ~ 0.8,
+                                      parametro == "mu_2" ~ 13,
+                                      parametro == "P_3" ~ 0.80,
+                                      parametro == "mu_4" ~  7,
+                                      parametro == "P_6" ~ 0.8,
+                                      TRUE ~  1000)
+                       )
   
 
 
-#write.csv(res_finales, "BD_app.csv", row.names = F)
+write.csv(res_finales, "BD_app.csv", row.names = F)
 
