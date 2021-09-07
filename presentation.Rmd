@@ -7,7 +7,7 @@ author:
   - Sebastián Gaviria S.
   - Santiago Zuluaga A.
 date: "08 de septiembre de 2021"
-institute: "Universidad Nacional de Colombia - Facultad de Ciencias - Sede Medellín"
+institute: "Docente: Raúl A. Pérez A. - Universidad Nacional de Colombia"
 short-title: "PROYECTO FINAL"
 output:
   beamer_presentation:
@@ -417,3 +417,52 @@ add_header_above(c(" "=1, "Noveno" = 3, "Décimo" = 3, "Undécimo" = 3, "Global"
 kable_styling(latex_options = c("striped", "hold_position"), font_size = 7)
 ```
 
+## Conclusiones
+
+- En primer lugar se observó que existen opiniones
+bastante divididas respecto a la satisfacción que los
+estudiantes poseen en cuanto a la implementación del 
+modelo de alternancia, puesto que se estima que la proporción 
+de los mismos que se encuentra satisfecha con este es bastante
+cercana al 50\%.
+
+- Con respecto al promedio semanal de estudio 
+independiente se estima un promedio de 0.55 horas por asignatura (dado que cursan 15 asignaturas), lo cual resulta bajo dada una intensidad horaria
+de al menos dos horas de clase por semana para cada asignatura.
+
+- Respecto al tópico de la proporción de estudiantes que
+realizan actividades extracurriculares, se estima que alrededor de la mitad de estudiantes son partícipes de esta 
+clase de actividades, lo cual resulta extraño para tan poco 
+tiempo dedicado al estudio independiente de sus asignaturas.
+
+## Conclusiones
+
+- En relación al promedio semanal de lectura de material
+no académico se tiene que los estudiantes dedican menos
+tiempo a esta actividad que a estudiar de manera independiente
+(teniendo en cuenta que le dedican poco tiempo al estudio
+independiente).
+
+- Al contrario de lo sucedido con las otras dos
+proporciones, la fracción de estudiantes que considera útil
+el modelo de educación virtual en su proceso de aprendizaje
+es significativamente menor que la proporción de 
+estudiantes que se siente satisfecha con la implementación
+del modelo de alternancia.
+
+## Conclusiones
+
+- Cabe resaltar que el grado noveno es significativamente
+diferente en cuanto a la proporción de estudiantes satisfechos
+con la implementación del modelo de alternancia y a la
+proporción de estudiantes que consideraron útil la virtualidad
+en su proceso de aprendizaje.
+
+- Finalmente se recomienda en caso de seguir con la línea
+de investigación, indagar en aspectos relacionados con la proporción de 
+estudiantes satisfechos con la implementación del modelo de 
+alternancia y con la proporción de estudiantes que consideraron 
+útil la virtualidad en su proceso de aprendizaje, puesto
+que estas dan indicio de que la institución puede
+mejorar en cuanto a la implementación de la primera y 
+el modo en que se imparten las clases de manera virtual.
