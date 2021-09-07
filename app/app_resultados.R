@@ -71,7 +71,7 @@ server <- function(input, output) {
       guides(x = "none") +
       scale_x_continuous(limits = c(0, 2), breaks = NULL) +
       labs(title = tabla_filtrada()["label_parametro"], 
-           y = "Estimación e intervalo de confianza al 95%", 
+           y = "Estimación e intervalo de confianza", 
            x = input$grado)
     
     
